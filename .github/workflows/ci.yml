@@ -35,14 +35,13 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
-      - name: navigate to backend folder
-        run: cd backend 
       - name: Build and Push Image to GitHub Packages
         uses: docker/build-push-action@v1
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
+          file: backend/Dockerfile
           repository: cedric-gasser/fanicon/fanicon-backend
           tag_with_ref: true
 
@@ -64,5 +63,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
+          file: frontend/Dockerfile
           repository: cedric-gasser/fanicon/fanicon-frontend
           tag_with_ref: true
