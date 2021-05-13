@@ -43,7 +43,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: Cedric-Gasser/fanicon/fanicon-backend
+          repository: cedric-gasser/fanicon/fanicon-backend
           tag_with_ref: true
 
   create_frontend_image:
@@ -64,5 +64,5 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: Cedric-Gasser/fanicon/fanicon-frontend
+          repository: cedric-gasser/fanicon/fanicon-frontend
           tag_with_ref: true
