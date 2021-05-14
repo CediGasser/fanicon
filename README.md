@@ -59,28 +59,28 @@ Der Admin kann Icons hinzufügen und löschen. Als Admin soll man auch Designs e
 ### Lana Ming
 Nutzergruppe: Admin
 
-![](dok/lana.png) 
+![lana](dok/lana.png) 
 
 Sie ist ein Content-Creator und Designerin. Nutzt häufig unsere App, um ihre Designs und Icons hochzuladen. Sie braucht praktisch immer einen Desktop-PC und kennt sich sehr gut aus mit Computer.
 
 ### Jacob Balisong
 Nutzergruppe: Admin
 
-![](dok/jacob.png) 
+![jacob](dok/jacob.png) 
 
 Er ist der Besitzer der App und hat diese mitentwickelt. Demensprechend hat er auch gute Computerkenntnisse. Er verwaltet hauptsächlich die User-Accounts und nutzt dazu das Admin-Interface unserer App wo er nach allen Usern suchen und filtern kann.
 
 ### Frizli
 Nutzergruppe: Normaler User
 
-![](dok/frizli.png) 
+![fritzli](dok/frizli.png) 
 
 Der Frizli kann sich noch nicht selbst einen VIP Account kaufen. Er kenn sich aber schon genügend mit der Technik aus und erstellt gerne Designs, welche er als Hintergrund bei seinem Schul-PC einstellt.
 
 ### Cole Sprouse
 Nutzergruppe: VIP User
 
-![](dok/cole.png) 
+![cole](dok/cole.png) 
 
 Cole hat Freude an cleanen Designs und kreiert immer wieder für sich und seine Kollegen Design, welche er auch als Sticker ausdruckt und auf diverse Gegenstände wie z.B. auf seinen Laptop draufklebt. Er kennt sich ebenfalls gut mit Computern aus und braucht unsere Web-App auch am Smartphone, um ein Design seinen Kollegen zu zeigen.
 
