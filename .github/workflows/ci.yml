@@ -47,6 +47,7 @@ jobs:
           registry: docker.pkg.github.com
           dockerfile: ./backend/Dockerfile
           repository: cedric-gasser/fanicon/fanicon-backend
+          tags: latest
           tag_with_ref: true
 
   create_frontend_image:
@@ -67,4 +68,5 @@ jobs:
           registry: docker.pkg.github.com
           dockerfile: ./frontend/Dockerfile
           repository: cedric-gasser/fanicon/fanicon-frontend
+          tags: latest
           tag_with_ref: true
