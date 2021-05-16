@@ -1,2 +1,3 @@
 FROM nginx:latest
-COPY . /usr/share/nginx/html/
+EXPOSE 443
+COPY ./views /usr/share/nginx/html/
