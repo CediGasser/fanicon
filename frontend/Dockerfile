@@ -1,3 +1,4 @@
 FROM nginx:latest
+WORKDIR ./frontend
 EXPOSE 443
-COPY . /usr/share/nginx/html
+COPY ./views /usr/share/nginx/html
