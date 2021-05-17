@@ -47,7 +47,8 @@ jobs:
           registry: docker.pkg.github.com
           dockerfile: ./backend/Dockerfile
           repository: cedric-gasser/fanicon/fanicon-backend
-          tag_with_ref: true
+          context: ./backend
+          tags: latest
 
   create_frontend_image:
     name: Push frontend Docker image to the GitHub Packages
@@ -67,4 +68,5 @@ jobs:
           registry: docker.pkg.github.com
           dockerfile: ./frontend/Dockerfile
           repository: cedric-gasser/fanicon/fanicon-frontend
-          tag_with_ref: true
+          context: ./frontend
+          tags: latest
