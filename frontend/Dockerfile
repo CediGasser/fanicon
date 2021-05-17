@@ -1,3 +1,3 @@
-FROM nginx:latest
+FROM nginx
 WORKDIR .
-COPY . /usr/share/nginx/html
+COPY ./views /usr/share/nginx/html
