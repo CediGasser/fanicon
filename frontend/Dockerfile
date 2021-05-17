@@ -1,3 +1,2 @@
 FROM nginx
-WORKDIR .
-COPY ./views /usr/share/nginx/html
+COPY ./frontend/views /usr/share/nginx/html
