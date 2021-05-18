@@ -27,7 +27,7 @@ Klasse S-Inf18aL
 
 [- Design-Editor](#Design-Editor)
 
-[Technologien](#Technologien)
+[Architektur](#Architektur)
 
 # Starten
 
@@ -126,19 +126,41 @@ Als User im Editor kann ich diverse Parameter wie Farbe, Grösse und Abstand etc
 
 Als User im Editor kann ich Icons aus der Library oder aus dem Design per Drag &amp; Drop herumschieben, um schnell und einfach die Icons anzuordnen.
 
-# Technologien
+# Architektur
 
-Im Backend haben wir eine Java-Applikation, die eine PostgreSQL-Datenbank verwendet, welche in einem Docker-Container laufen wird. Das Frontend soll auf einem Deno-Webserver laufen und in JavaScript und TypeScript geschrieben sein. Folgende Technologien werden genutzt:
+Auf einem Ubuntu-Server lauft jeder teil der Applikation in einem Docker-Container wie unten beschrieben.
 
-- Docker (Postgres DB)
-- Java
-- Sessions
-- Caching
-- DB Migrationsscripts
-- Spring
-- Deno
-- Java- / Typescript
-- HTML &amp; CSS
+![](dok/architecture.png)
+
+Name | Image
+-----|------
+Reverse-Proxy | `jwilder/nginx-proxy`
+Fanicon-Frontend | `docker.pkg.github.com/cedric-gasser/fanicon/fanicon-frontend`
+Fanicon-Backend | `docker.pkg.github.com/cedric-gasser/fanicon/fanicon-backend`
+Redis Cache | `redis:6-alpine`
+Postgres DB | `postgres:13-alpine`
+
+Während dem entwickeln wird zusätzlich ein container `dpage/pgadmin4:5.2` verwendet, um die Datenbank zu inspektieren.
+
+Folgende Technologien verwenden wir, welche für uns grösstenteils neu sind:
+
+- Docker
+- Docker-Compose
+- Fanicon Backend
+  - Java
+  - Spring
+  - DB Migrationsscripts
+  - Sessions
+- Postgres DB
+- Caching (Redis)
+- Fanicon Frontend
+  - nginx webserver
+  - React
+  - JavaScript
+  - HTML &amp; CSS (Bootstrap)
+
+
+Die 
 
 # ERD
 
