@@ -160,7 +160,6 @@ Folgende Technologien verwenden wir, welche für uns grösstenteils neu sind:
   - HTML &amp; CSS (Bootstrap)
 
 
-Die 
 
 # ERD
 
