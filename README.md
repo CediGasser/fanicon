@@ -32,7 +32,8 @@ Klasse S-Inf18aL
 # Starten
 
   * `Docker` und `Docker-Compose` sind vorausgesetzt
-  * `docker-compose up -d` ausführen
+  * `docker-compose up -d` ausführen oder
+  * `docker-compose up -d --build` nach Änderungen ausführen
 
 # Beschreibung
 
