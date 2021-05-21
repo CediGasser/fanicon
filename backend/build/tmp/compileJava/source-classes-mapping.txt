@@ -1,2 +1,6 @@
 com/cedricgasser/fanicon/FaniconApplication.java
  com.cedricgasser.fanicon.FaniconApplication
+com/cedricgasser/fanicon/theme/Theme.java
+ com.cedricgasser.fanicon.theme.Theme
+com/cedricgasser/fanicon/icon/Icon.java
+ com.cedricgasser.fanicon.icon.Icon
