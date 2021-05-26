@@ -29,17 +29,22 @@
       .btn1{
         border: white;
         outline: none;
-        height: 50px;
+        height: 40px;
         width: 100%;
         background-color: black;
         color: white;
         border-radius: 4px;
         font-weight: bold;
+        margin-bottom: 7px;
+        margin-top: 4px;
       }
       .btn1:hover{
         background: white;
         border: 1px solid;
         color: black;
+      }
+      .textinput{
+        margin-bottom: 5px;
       }
     </style>
   </head>
@@ -79,10 +84,13 @@
         <div>
           <div>
             <form>
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Delete</button>
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Save</button>
+              <div class="form-group">
+                <textarea class="form-control" rows="20" id="editor"></textarea>
+              </div>
+              <button class="btn1" type="submit" type="submit">Save</button>
+              <button class="btn1 btn-outline-primary mr-1" type="reset">Delete</button>
               <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="textinput form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
               </form>
             </form>
