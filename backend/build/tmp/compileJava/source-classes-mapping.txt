@@ -1,6 +1,22 @@
 com/cedricgasser/fanicon/FaniconApplication.java
  com.cedricgasser.fanicon.FaniconApplication
-com/cedricgasser/fanicon/theme/Theme.java
- com.cedricgasser.fanicon.theme.Theme
-com/cedricgasser/fanicon/icon/Icon.java
- com.cedricgasser.fanicon.icon.Icon
+com/cedricgasser/fanicon/model/Theme.java
+ com.cedricgasser.fanicon.model.Theme
+com/cedricgasser/fanicon/model/User.java
+ com.cedricgasser.fanicon.model.User
+com/cedricgasser/fanicon/model/UserGroup.java
+ com.cedricgasser.fanicon.model.UserGroup
+com/cedricgasser/fanicon/model/Design.java
+ com.cedricgasser.fanicon.model.Design
+com/cedricgasser/fanicon/model/Icon.java
+ com.cedricgasser.fanicon.model.Icon
+com/cedricgasser/fanicon/model/IconInDesign.java
+ com.cedricgasser.fanicon.model.IconInDesign
+com/cedricgasser/fanicon/repository/DesignRepository.java
+ com.cedricgasser.fanicon.repository.DesignRepository
+com/cedricgasser/fanicon/repository/ThemeRepository.java
+ com.cedricgasser.fanicon.repository.ThemeRepository
+com/cedricgasser/fanicon/repository/IconRepository.java
+ com.cedricgasser.fanicon.repository.IconRepository
+com/cedricgasser/fanicon/repository/UserRepository.java
+ com.cedricgasser.fanicon.repository.UserRepository
