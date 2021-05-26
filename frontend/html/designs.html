@@ -16,7 +16,7 @@
         box-sizing: border-box;
       }
       body{
-        background: gray;
+        background: white;
       }
       .row{
         background:white;
@@ -46,37 +46,51 @@
   <body>
     
     <section class="Form my-4 mx-5">
-      <div class="container">
-        <div class="row no-gutters">
-          <div class="col-lg-5">
-            <img src="/frontend/logo_round.svg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-7 px-5 pt-5">
-            <h1 class="font-weight-bold py-3">Fanicon</h1>
-            <h4>Login</h4>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="col-lg-1">
+          <img src="assets/logo_round.svg" class="img-fluid" alt="">
+        </div>
+        <a class="navbar-brand" href="#">Fanicon</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Editor <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Designoverview <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Buy VIP <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Logout <span class="sr-only"></span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <h1 class="font-weight-bold py-3">Designoverview</h1>
+        <div>
+          <div>
+            <div class="container">
+              <div class="row">
+             <div class="col-xs-2"></div>
+             <div>
+             <h1 class="col-xs-8 text-center">Choose your design</h1>
+             </div> 
+           </div>
+           </div>
             <form>
-              <div class="form-row">
-                <div class="col-lg-7">
-                  <input type="email" placeholder="Email-Address" class="form-control my-3 p-4">
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-lg-7">
-                  <input type="password" placeholder="Password" class="form-control my-3 p-4">
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-lg-7">
-                  <button type="button" class="btn1 mt-1 mb-2">Login</button>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-lg-7">
-                  <button type="button" class="btn1 mt-3 mb-5">Cancel</button>
-                </div>
-              </div>
-              
-              <p>Don't have an account? <a href="#">Sign Up</a></p>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
             </form>
           </div>
         </div>

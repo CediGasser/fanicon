@@ -29,22 +29,17 @@
       .btn1{
         border: white;
         outline: none;
-        height: 40px;
+        height: 50px;
         width: 100%;
         background-color: black;
         color: white;
         border-radius: 4px;
         font-weight: bold;
-        margin-bottom: 7px;
-        margin-top: 4px;
       }
       .btn1:hover{
         background: white;
         border: 1px solid;
         color: black;
-      }
-      .textinput{
-        margin-bottom: 5px;
       }
     </style>
   </head>
@@ -53,13 +48,12 @@
     <section class="Form my-4 mx-5">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="col-lg-1">
-          <img src="../logo_round.svg" class="img-fluid" alt="">
+          <img src="assets/logo_round.svg" class="img-fluid" alt="">
         </div>
         <a class="navbar-brand" href="#">Fanicon</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
@@ -72,53 +66,29 @@
               <a class="nav-link" href="#">Designoverview <span class="sr-only"></span></a>
             </li>
             <li class="nav-item active">
+              <a class="nav-link" href="#">Buy VIP <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
               <a class="nav-link" href="#">Logout <span class="sr-only"></span></a>
             </li>
           </ul>
         </div>
       </nav>
-      <h1 class="font-weight-bold py-3">Admin</h1>
-        <div>
-          <table class="table">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">Dispalyname</th>
-                <th scope="col">Email</th>
-                <th scope="col">Usergroup</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Lana Ming</td>
-                <td>lanaming@email.ch</td>
-                <td>Admin</td>
-              </tr>
-              <tr>
-                <td>Jacob Balisong</td>
-                <td>jacobbalisong@email.ch</td>
-                <td>Admin</td>
-              </tr>
-              <tr>
-                <td>Fritzli</td>
-                <td>fritzli@email.ch</td>
-                <td>User</td>
-              </tr>
-              <tr>
-                <td>Cole Sprouse</td>
-                <td>colesprouse@email.ch</td>
-                <td>VIP</td>
-              </tr>
-            </tbody>
-          </table>
+      <h1 class="font-weight-bold py-3">Home</h1>
           <div>
+            <div class="container">
+              <div class="row">
+             <div class="col-xs-2"></div>
+             <div>
+             <h1 class="col-xs-8 text-center">Welcome to Fanicon</h1>
+             </div> 
+             <div class="btn btn-primary col-xs-2 pull-right mar">Upgrade to VIP</div>
+           </div>
+           </div>
             <form>
-              <div class="form-group">
-                <textarea class="form-control" rows="20" id="editor"></textarea>
-              </div>
-              <button class="btn1" type="submit" type="submit">Save</button>
-              <button class="btn1 btn-outline-primary mr-1" type="reset">Delete</button>
+              <h4>My Designs</h4>
               <form class="form-inline my-2 my-lg-0">
-                <input class="textinput form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
               </form>
             </form>
