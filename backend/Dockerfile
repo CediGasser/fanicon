@@ -1,2 +1,5 @@
 FROM gcr.io/distroless/java-debian10:11
-ENTRYPOINT ["java","-jar","./build/libs/*.jar"]
+EXPOSE 8080
+ARG JAR_FILE=build/libs/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
