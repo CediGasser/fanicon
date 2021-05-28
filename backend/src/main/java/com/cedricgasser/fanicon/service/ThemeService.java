@@ -31,18 +31,18 @@ public class ThemeService {
     }
 
     @Transactional
-    public void delete(final long id) {
+    public void delete(final Long id) {
         themeRepository.deleteById(id);
     }
 
     @Transactional
-    public Optional<Theme> getById(final long id) {
+    public Optional<Theme> getById(final Long id) {
         return themeRepository.findById(id);
     }
 
     @Transactional(readOnly = true)
-    public List<Icon> getIconsFromTheme(final long id) {
-        return iconRepository.findByTheme(id);
+    public List<Icon> getIconsFromTheme(final Long id) {
+        return iconRepository.findByTheme(themeRepository.findById(id).orElseThrow());
     }
 
     @Transactional(readOnly = true)

@@ -1,5 +1,6 @@
 package com.cedricgasser.fanicon.controller;
 
+import com.cedricgasser.fanicon.dto.IconDto;
 import com.cedricgasser.fanicon.model.Icon;
 import com.cedricgasser.fanicon.service.IconService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,23 +22,23 @@ public class IconController {
 
     @PostMapping
     @PreAuthorize("hasAuthority('ADMIN')")
-    public Icon add(@RequestBody final Icon icon) {
+    public Icon add(@RequestBody final IconDto icon) {
         return iconService.add(icon);
     }
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasAuthority('ADMIN')")
-    public void delete(final long id) {
+    public void delete(@PathVariable final Long id) {
         iconService.delete(id);
     }
 
     @GetMapping("/{id}")
-    public Icon getById(final long id) { return iconService.getById(id).orElseThrow(); }
+    public Icon getById(@PathVariable final Long id) { return iconService.getById(id).orElseThrow(); }
 
     @GetMapping
-    public List<Icon> get(@RequestParam(required = false) String name, @RequestParam(required = false) String themeName) {
-        if (name != null || themeName != null) {
-            return iconService.searchByNameOrThemeName(name, themeName);
+    public List<Icon> get(@RequestParam(required = false) String q) {
+        if (q != null) {
+            return iconService.searchByNameOrThemeName(q);
         }
         return iconService.getAll();
     }

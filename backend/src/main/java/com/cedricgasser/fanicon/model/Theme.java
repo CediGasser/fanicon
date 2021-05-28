@@ -14,7 +14,7 @@ public class Theme {
     @Column(name = "id", nullable = false, updatable = false)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "theme")
@@ -26,5 +26,10 @@ public class Theme {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+
+    public Long getId() {
+        return id;
     }
 }

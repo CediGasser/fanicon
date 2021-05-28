@@ -24,23 +24,25 @@ com/cedricgasser/fanicon/repository/ThemeRepository.java
  com.cedricgasser.fanicon.repository.ThemeRepository
 com/cedricgasser/fanicon/repository/IconInDesignRepository.java
  com.cedricgasser.fanicon.repository.IconInDesignRepository
+com/cedricgasser/fanicon/dto/IconDto.java
+ com.cedricgasser.fanicon.dto.IconDto
+com/cedricgasser/fanicon/model/Theme.java
+ com.cedricgasser.fanicon.model.Theme
+com/cedricgasser/fanicon/dto/IconInDesignDto.java
+ com.cedricgasser.fanicon.dto.IconInDesignDto
+com/cedricgasser/fanicon/model/Icon.java
+ com.cedricgasser.fanicon.model.Icon
+com/cedricgasser/fanicon/model/IconInDesign.java
+ com.cedricgasser.fanicon.model.IconInDesign
 com/cedricgasser/fanicon/controller/ThemeController.java
  com.cedricgasser.fanicon.controller.ThemeController
 com/cedricgasser/fanicon/controller/IconController.java
  com.cedricgasser.fanicon.controller.IconController
-com/cedricgasser/fanicon/model/Theme.java
- com.cedricgasser.fanicon.model.Theme
 com/cedricgasser/fanicon/service/IconService.java
  com.cedricgasser.fanicon.service.IconService
 com/cedricgasser/fanicon/repository/IconRepository.java
  com.cedricgasser.fanicon.repository.IconRepository
-com/cedricgasser/fanicon/model/Icon.java
- com.cedricgasser.fanicon.model.Icon
 com/cedricgasser/fanicon/service/DesignService.java
  com.cedricgasser.fanicon.service.DesignService
-com/cedricgasser/fanicon/dto/IconInDesignDto.java
- com.cedricgasser.fanicon.dto.IconInDesignDto
-com/cedricgasser/fanicon/model/IconInDesign.java
- com.cedricgasser.fanicon.model.IconInDesign
 com/cedricgasser/fanicon/service/ThemeService.java
  com.cedricgasser.fanicon.service.ThemeService

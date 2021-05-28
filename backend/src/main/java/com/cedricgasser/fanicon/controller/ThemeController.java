@@ -29,12 +29,12 @@ public class ThemeController {
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasAuthority('ADMIN')")
-    public void delete(final long id) {
+    public void delete(@PathVariable final Long id) {
         themeService.delete(id);
     }
 
     @GetMapping("/{id}")
-    public Theme getById(final long id) { return themeService.getById(id).orElseThrow(); }
+    public Theme getById(@PathVariable final Long id) { return themeService.getById(id).orElseThrow(); }
 
     @GetMapping
     public List<Theme> get(@RequestParam(required = false) String name) {
@@ -43,4 +43,7 @@ public class ThemeController {
         }
         return themeService.getAll();
     }
+
+    @GetMapping("/{id}/icons")
+    public List<Icon> getIconsFromTheme(@PathVariable final Long id) { return themeService.getIconsFromTheme(id); }
 }
