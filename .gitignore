@@ -1,6 +1,6 @@
 ### Gradle ###
 backend/.gradle
-backend/build/
+backend/build
 
 ### Intellij ###
 backend/out/

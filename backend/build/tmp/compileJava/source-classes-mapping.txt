@@ -1,2 +1,38 @@
 com/cedricgasser/fanicon/FaniconApplication.java
  com.cedricgasser.fanicon.FaniconApplication
+com/cedricgasser/fanicon/service/UserService.java
+ com.cedricgasser.fanicon.service.UserService
+com/cedricgasser/fanicon/repository/DesignRepository.java
+ com.cedricgasser.fanicon.repository.DesignRepository
+com/cedricgasser/fanicon/config/WebSecurityConfig.java
+ com.cedricgasser.fanicon.config.WebSecurityConfig
+com/cedricgasser/fanicon/service/IconService.java
+ com.cedricgasser.fanicon.service.IconService
+com/cedricgasser/fanicon/repository/IconRepository.java
+ com.cedricgasser.fanicon.repository.IconRepository
+com/cedricgasser/fanicon/model/Icon.java
+ com.cedricgasser.fanicon.model.Icon
+com/cedricgasser/fanicon/service/DesignService.java
+ com.cedricgasser.fanicon.service.DesignService
+com/cedricgasser/fanicon/auth/PgAuthenticationProvider.java
+ com.cedricgasser.fanicon.auth.PgAuthenticationProvider
+com/cedricgasser/fanicon/model/UserGroup.java
+ com.cedricgasser.fanicon.model.UserGroup
+com/cedricgasser/fanicon/dto/UserDto.java
+ com.cedricgasser.fanicon.dto.UserDto
+com/cedricgasser/fanicon/service/ThemeService.java
+ com.cedricgasser.fanicon.service.ThemeService
+com/cedricgasser/fanicon/model/Theme.java
+ com.cedricgasser.fanicon.model.Theme
+com/cedricgasser/fanicon/repository/UserRepository.java
+ com.cedricgasser.fanicon.repository.UserRepository
+com/cedricgasser/fanicon/model/Design.java
+ com.cedricgasser.fanicon.model.Design
+com/cedricgasser/fanicon/model/User.java
+ com.cedricgasser.fanicon.model.User
+com/cedricgasser/fanicon/repository/ThemeRepository.java
+ com.cedricgasser.fanicon.repository.ThemeRepository
+com/cedricgasser/fanicon/model/IconInDesign.java
+ com.cedricgasser.fanicon.model.IconInDesign
+com/cedricgasser/fanicon/controller/AuthController.java
+ com.cedricgasser.fanicon.controller.AuthController
