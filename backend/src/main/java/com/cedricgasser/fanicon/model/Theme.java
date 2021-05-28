@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table
 @NamedQuery(name = "Theme.searchByName", query = "SELECT t FROM Theme t WHERE t.name LIKE '%' || :name || '%'")
 public class Theme {
     @Id

@@ -3,6 +3,7 @@ package com.cedricgasser.fanicon.model;
 import javax.persistence.*;
 
 @Entity
+@Table
 public class IconInDesign {
     @Id
     @SequenceGenerator(name = "icon_in_design_sequence", allocationSize = 1)

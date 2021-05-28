@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table
 @NamedQuery(name = "Icon.searchByNameOrThemeName", query = "SELECT i FROM Icon i INNER JOIN Theme t ON i.theme = t.id WHERE LOWER(i.name) LIKE '%' || LOWER(:q) || '%' OR LOWER(t.name) LIKE '%' || LOWER(:q) || '%'")
 public class Icon {
     @Id

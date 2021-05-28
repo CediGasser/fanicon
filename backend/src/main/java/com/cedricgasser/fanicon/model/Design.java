@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table
 public class Design {
     @Id
     @SequenceGenerator(name = "design_sequence", allocationSize = 1)
@@ -25,6 +26,50 @@ public class Design {
     @ManyToOne(optional = false)
     private User user;
 
-    @OneToMany(mappedBy = "design")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "design")
     private List<IconInDesign> iconInDesign;
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getBgColor() {
+        return bgColor;
+    }
+
+    public void setBgColor(String bgColor) {
+        this.bgColor = bgColor;
+    }
+
+    public String getIconSize() {
+        return iconSize;
+    }
+
+    public void setIconSize(String iconSize) {
+        this.iconSize = iconSize;
+    }
+
+    public String getIconMargin() {
+        return iconMargin;
+    }
+
+    public void setIconMargin(String iconMargin) {
+        this.iconMargin = iconMargin;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }
