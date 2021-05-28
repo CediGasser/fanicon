@@ -4,8 +4,8 @@ com/cedricgasser/fanicon/auth/PgAuthenticationProvider.java
  com.cedricgasser.fanicon.auth.PgAuthenticationProvider
 com/cedricgasser/fanicon/repository/DesignRepository.java
  com.cedricgasser.fanicon.repository.DesignRepository
-com/cedricgasser/fanicon/controller/AuthController.java
- com.cedricgasser.fanicon.controller.AuthController
+com/cedricgasser/fanicon/service/ThemeService.java
+ com.cedricgasser.fanicon.service.ThemeService
 com/cedricgasser/fanicon/dto/UserDto.java
  com.cedricgasser.fanicon.dto.UserDto
 com/cedricgasser/fanicon/repository/UserRepository.java
@@ -44,5 +44,5 @@ com/cedricgasser/fanicon/repository/IconRepository.java
  com.cedricgasser.fanicon.repository.IconRepository
 com/cedricgasser/fanicon/service/DesignService.java
  com.cedricgasser.fanicon.service.DesignService
-com/cedricgasser/fanicon/service/ThemeService.java
- com.cedricgasser.fanicon.service.ThemeService
+com/cedricgasser/fanicon/controller/AuthController.java
+ com.cedricgasser.fanicon.controller.AuthController

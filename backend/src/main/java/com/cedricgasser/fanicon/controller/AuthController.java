@@ -7,6 +7,7 @@ import com.cedricgasser.fanicon.model.UserGroup;
 import com.cedricgasser.fanicon.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,5 +35,11 @@ public class AuthController {
     public void login(@RequestBody final UserDto loginRequest){
         final Authentication authentication = authenticationProvider.login(loginRequest);
         SecurityContextHolder.getContext().setAuthentication(authentication);
+    }
+
+    @GetMapping("/info")
+    public Authentication getInfo() {
+        final SecurityContext context = SecurityContextHolder.getContext();
+        return context.getAuthentication();
     }
 }
