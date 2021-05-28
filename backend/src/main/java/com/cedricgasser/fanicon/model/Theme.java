@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@NamedQuery(name = "Theme.searchByName", query = "SELECT t FROM Theme t WHERE t.name LIKE '%' || :name || '%'")
 public class Theme {
     @Id
     @SequenceGenerator(name = "theme_sequence", allocationSize = 1)
@@ -18,4 +19,12 @@ public class Theme {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "theme")
     private List<Icon> icon;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
