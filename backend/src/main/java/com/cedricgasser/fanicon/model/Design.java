@@ -1,7 +1,4 @@
 package com.cedricgasser.fanicon.model;
-
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -24,10 +21,21 @@ public class Design {
     private String iconMargin;
 
     @ManyToOne(optional = false)
+    @JoinColumn(name = "user_name")
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "design")
     private List<IconInDesign> iconInDesign;
+
+    protected Design(){}
+
+    public Design(final String name, final String bgColor, final String iconSize, final String iconMargin, final User user){
+        this.name = name;
+        this.bgColor = bgColor;
+        this.iconSize = iconSize;
+        this.iconMargin = iconMargin;
+        this.user = user;
+    }
 
     public Long getId() {
         return id;
