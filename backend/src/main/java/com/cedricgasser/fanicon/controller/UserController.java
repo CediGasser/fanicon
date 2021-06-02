@@ -1,6 +1,7 @@
 package com.cedricgasser.fanicon.controller;
 
 import com.cedricgasser.fanicon.dto.DesignDto;
+import com.cedricgasser.fanicon.model.User;
 import com.cedricgasser.fanicon.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -26,4 +27,8 @@ public class UserController {
     public List<DesignDto> getDesignsFromUser(@PathVariable final String name) {
         return userService.getDesignsFromUser(name);
     }
+
+    @GetMapping
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public List<User> getAll() { return userService.getAll(); }
 }

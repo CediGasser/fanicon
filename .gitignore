@@ -21,3 +21,5 @@ backend/.idea/
 *.zip
 *.tar.gz
 *.rar
+backend/.gradle
+backend/.gradle/6.8.3/fileHashes/fileHashes.lock
