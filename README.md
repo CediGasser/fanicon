@@ -31,7 +31,7 @@ Klasse S-Inf18aL
 
 # Starten
 
-  * `Docker` und `Docker-Compose` sind vorausgesetzt
+  * `Docker`, `Docker-Compose` und `Java 11` sind vorausgesetzt
   * `cd backend; ./gradlew bootJar` backend builden
   * `docker-compose up -d` ausführen
 
