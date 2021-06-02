@@ -32,3 +32,24 @@ export async function register(name, email, password){
         login(name, password)
     }
 }
+
+export async function addicon(name, theme, style, svgcode){
+    const data = {
+        'name': name,
+        'themeId': theme,
+        'style': style,
+        'svg': svgcode,
+        'copyrightSource': null,
+        'copyrighted': false
+    }
+
+    const response = await fetch("api/icons", {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    
+    if (response.status == 200){
+        location.href = "/admin.html"
+    }
+}
