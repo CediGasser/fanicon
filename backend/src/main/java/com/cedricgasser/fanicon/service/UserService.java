@@ -37,7 +37,7 @@ public class UserService {
 
     @Transactional
     public User register(final User user) {
-        user.setUserGroup(UserGroup.ADMIN);
+        user.setUserGroup(UserGroup.NORMAL);
         return userRepository.save(user);
     }
 
