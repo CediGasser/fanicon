@@ -41,56 +41,40 @@
         border: 1px solid;
         color: black;
       }
+      .btn{
+        border:white;
+      }
+      .btn:hover{
+        background: lightgray;
+      }
     </style>
   </head>
   <body>
     
     <section class="Form my-4 mx-5">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="col-lg-1">
-          <img src="assets/logo_round.svg" class="img-fluid" alt="">
-        </div>
-        <a class="navbar-brand" href="#">Fanicon</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="home.html">Home <span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="editor.html">Editor <span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="designs.html">Designoverview <span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="vip.html">Buy VIP <span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Logout <span class="sr-only"></span></a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <h1 class="font-weight-bold py-3">Home</h1>
+      <div class="col-lg-1">
+        <form>
+      <h1 class="col-md-11 text-center">Buy VIP</h1>
+      </form>
+    </div>
           <div>
             <div class="container">
               <div class="row">
              <div class="col-xs-2"></div>
              <div>
-             <h1 class="col-xs-8 text-center">Welcome to Fanicon</h1>
+             <h2 class="col-md-11 text-center">Buy VIP to safe your designs</h2>
              </div> 
-             <a class="btn btn-primary col-xs-2 pull-right mar" href="vip.html">Upgrade to VIP</a>
+             <body>
+              <div class="form-row">
+                  <div class="col-md-11 text-center">
+                      <a type="button" href="home.html" class="btn btn-normal" >Cancel</a>
+                      <a type="button" class="btn btn-warning">Buy</a>
+                  </div>
+              </div>
+          </body>
            </div>
            </div>
             <form>
-              <h4>My Designs</h4>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
             </form>
           </div>
         </div>
