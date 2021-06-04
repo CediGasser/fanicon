@@ -4,7 +4,6 @@ create sequence design_sequence start 1 increment 1;
 create sequence icon_in_design_sequence start 1 increment 1;
 create sequence icon_sequence start 1 increment 1;
 create sequence theme_sequence start 1 increment 1;
-create sequence user_sequence start 1 increment 1;
 
 create table theme
 (
@@ -16,8 +15,8 @@ create table theme
 
 create table fanicon_user
 (
-    email varchar(255) not null,
     name varchar(255) not null,
+    email varchar(255) not null,
     password varchar(255) not null,
     user_group varchar(255) not null,
     primary key (name),
