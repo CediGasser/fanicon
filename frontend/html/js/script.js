@@ -53,3 +53,21 @@ export async function addicon(name, theme, style, svgcode){
         location.href = "/admin.html"
     }
 }
+
+export async function buyvip(name, theme, style, svgcode){
+    const data = {
+        'usergroup': usergroup,
+        'copyrightSource': null,
+        'copyrighted': false
+    }
+
+    const response = await fetch("api/icons", {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    
+    if (response.status == 200){
+        location.href = "/home.html"
+    }
+}
