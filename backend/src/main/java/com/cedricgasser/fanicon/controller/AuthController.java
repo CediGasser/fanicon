@@ -40,4 +40,7 @@ public class AuthController {
         final SecurityContext context = SecurityContextHolder.getContext();
         return context.getAuthentication();
     }
+
+    @PutMapping("/upgrade")
+    public UserGroup upgrade() { return userService.upgradeToVip(); }
 }

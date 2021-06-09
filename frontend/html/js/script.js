@@ -83,3 +83,12 @@ export async function getusers(){
         return await response.json()
     }
 }
+
+export async function getIcons(q){
+    const response = await fetch(`api/icons?q=${q}`)
+
+    if (response.status == 200){
+        const icons = await response.json()
+        return icons
+    }
+}

@@ -9,6 +9,8 @@ import com.cedricgasser.fanicon.model.UserGroup;
 import com.cedricgasser.fanicon.repository.DesignRepository;
 import com.cedricgasser.fanicon.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -37,6 +39,14 @@ public class UserService {
 
         User user = userRepository.checkPassword(name, password);
         return Optional.of(user.getUserGroup());
+    }
+
+    @Transactional
+    public UserGroup upgradeToVip() {
+        final SecurityContext context = SecurityContextHolder.getContext();
+        User userToUpdate = userRepository.getByName(context.getAuthentication().getName());
+        userToUpdate.setUserGroup(UserGroup.VIP);
+        return userRepository.save(userToUpdate).getUserGroup();
     }
 
     @Transactional
