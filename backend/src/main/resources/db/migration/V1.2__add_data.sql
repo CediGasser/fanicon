@@ -11,10 +11,10 @@ ALTER TABLE icon_in_design ALTER COLUMN id SET DEFAULT nextval('icon_in_design_s
 ALTER TABLE icon
 ALTER COLUMN svg TYPE TEXT;
 
-insert into theme (name)
-    values ('Avatar'),
-           ('Valorant'),
-           ('Fanicon');
+insert into theme (name, id)
+    values ('Avatar', 1),
+           ('Valorant', 2),
+           ('Fanicon', 3);
 
 insert into icon (copyright_source, is_copyrighted, style, theme_id, name, svg)
     values (null, null, null, 1, 'Brimstone Incendiary', '<?xml version="1.0" standalone="no"?>
