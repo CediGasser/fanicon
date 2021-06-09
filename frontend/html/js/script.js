@@ -68,6 +68,6 @@ export async function buyvip(name, theme, style, svgcode){
     })
     
     if (response.status == 200){
-        location.href = "/home.html"
+        location.href = "/login.html"
     }
 }
