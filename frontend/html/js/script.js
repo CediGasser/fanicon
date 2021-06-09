@@ -54,26 +54,7 @@ export async function addicon(name, theme, style, svgcode){
     }
 }
 
-export async function buyvip(name, theme, style, svgcode){
-    const data = {
-        'usergroup': usergroup,
-        'copyrightSource': null,
-        'copyrighted': false
-    }
-
-    const response = await fetch("api/icons", {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-    })
-    
-    if (response.status == 200){
-        location.href = "/login.html"
-    }
-}
-
 export async function getusers(){
-
     const response = await fetch('api/users')
 
     if (response.status == 200){
@@ -88,5 +69,13 @@ export async function getIcons(q){
     if (response.status == 200){
         const icons = await response.json()
         return icons
+    }
+}
+
+export async function upgradeToVip(){
+    const response = await fetch('api/auth/upgrade', {method: 'PUT'})
+
+    if (response.status == 200){
+        location.href = "/home.html"
     }
 }

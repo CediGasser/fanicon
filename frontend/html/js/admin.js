@@ -1,21 +1,19 @@
 import { getusers } from './script.js';
 
-const btnSearchIcon = document.getElementById('btnSearchIcon')
+getusers().then(users => {
+    let str = ''
 
-const users = await getusers()
-console.log(users)
+    users.forEach(user => {
+        str += `
+            <tr>
+                <td>${user.name}</td>
+                <td>${user.email}</td>
+                <td>${user.userGroup}</td>
+            </tr>`
+    })
 
-let str = ''
+    console.log(str)
 
-users.forEach(user => {
-    str += `
-    <tr>
-    <td>${user.name}</td>
-    <td>${user.email}</td>
-    <td>${user.userGroup}</td>
-    </tr>`
+    document.getElementById('userlist').innerHTML = str
 })
 
-console.log(str)
-
-document.getElementById('userlist').innerHTML = str
