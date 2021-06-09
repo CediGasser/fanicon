@@ -69,7 +69,7 @@ Nutzergruppe: Admin
 
 ![jacob](dok/jacob.png) 
 
-Er ist der Besitzer der App und hat diese mitentwickelt. Demensprechend hat er auch gute Computerkenntnisse. Er verwaltet hauptsächlich die User-Accounts und nutzt dazu das Admin-Interface unserer App wo er nach allen Usern suchen und filtern kann.
+Er ist der Besitzer der App und hat diese mitentwickelt. Demensprechend hat er auch gute Computerkenntnisse. Er verwaltet hauptsächlich die User-Accounts und nutzt dazu das Admin-Interface seiner App, in welchem er alle User anzeigen kann.
 
 ### Frizli
 Nutzergruppe: Normaler User
