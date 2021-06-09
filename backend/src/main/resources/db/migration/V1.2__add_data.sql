@@ -12,8 +12,8 @@ ALTER TABLE icon
 ALTER COLUMN svg TYPE TEXT;
 
 insert into theme (name, id)
-    values ('Avatar', 1),
-           ('Valorant', 2),
+    values ('Valorant', 1),
+           ('Avatar', 2),
            ('Fanicon', 3);
 
 insert into icon (copyright_source, is_copyrighted, style, theme_id, name, svg)
