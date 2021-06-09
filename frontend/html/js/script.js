@@ -64,7 +64,12 @@ export async function getusers(){
 }
 
 export async function getIcons(q){
-    const response = await fetch(`api/icons?q=${q}`)
+    let url = `api/icons?q=${q}`
+    if (q == null) {
+        url = 'api/icons'
+    }
+
+    const response = await fetch(url)
 
     if (response.status == 200){
         const icons = await response.json()
