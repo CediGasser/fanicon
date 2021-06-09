@@ -71,3 +71,15 @@ export async function buyvip(name, theme, style, svgcode){
         location.href = "/login.html"
     }
 }
+
+export async function getusers(){
+
+    const response = await fetch("api/users", {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+    })
+    
+    if (response.status == 200){
+        return await response.json()
+    }
+}
