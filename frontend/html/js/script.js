@@ -74,13 +74,11 @@ export async function buyvip(name, theme, style, svgcode){
 
 export async function getusers(){
 
-    const response = await fetch("api/users", {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' }
-    })
-    
+    const response = await fetch('api/users')
+
     if (response.status == 200){
-        return await response.json()
+        const users = await response.json()
+        return users
     }
 }
 
