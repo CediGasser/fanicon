@@ -10,7 +10,14 @@ btnSearchIcon.addEventListener('click', async () => {
     let str = ''
 
     icons.forEach(icon => {
-        str += icon.svg
+        str += `
+        <div class="card iconCard text-center">
+            ${icon.svg}
+            <div class="card-body">
+                <h5 class="card-title">${icon.name}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">${icon.theme.name}</h6>
+            </div>
+        </div>`
     })
 
     console.log(str)
