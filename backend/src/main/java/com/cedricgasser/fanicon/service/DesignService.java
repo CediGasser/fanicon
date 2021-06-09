@@ -43,7 +43,6 @@ public class DesignService {
     public DesignDto add(final DesignDto designDto) {
         final SecurityContext context = SecurityContextHolder.getContext();
         String userName = context.getAuthentication().getName();
-        System.out.println(userName);
         Design design = new Design(designDto.getName(), designDto.getBgColor(), designDto.getIconSize(), designDto.getIconMargin(), userRepository.findById(userName).orElseThrow());
         Long designId = designRepository.save(design).getId();
         for (IconInDesignDto iconDto : designDto.getIcons()) {
