@@ -36,13 +36,26 @@ function addToDesign(e){
     divDesign.appendChild(svg)
 }
 
-document.getElementById('inputBgColor').addEventListener("input", e => {
+document.getElementById('inputBgColor').addEventListener('input', e => {
     divDesign.style.backgroundColor = e.target.value
 });
 
-document.getElementById('inputIconColor').addEventListener("input", e =>{
+document.getElementById('inputIconColor').addEventListener('input', e =>{
     let color = e.target.value
-    CCSStylesheetRuleStyle('styles', ".icon g", "fill", color);
+    CCSStylesheetRuleStyle('styles', '#designContainer .icon g', 'fill', color);
+})
+
+document.getElementById('inputIconMargin').addEventListener('input', e => {
+    let margin = e.target.value + 'px'
+    console.log('margin: ' + margin)
+    CCSStylesheetRuleStyle('styles', '#designContainer .icon', 'margin', margin);
+})
+
+document.getElementById('inputIconSize').addEventListener('input', e => {
+    let size = e.target.value + 'px'
+    console.log('size: ' + size)
+    CCSStylesheetRuleStyle('styles', '#designContainer .icon', 'height', size);
+    CCSStylesheetRuleStyle('styles', '#designContainer .icon', 'width', size);
 })
 
 function CCSStylesheetRuleStyle(stylesheet, selectorText, style, value){

@@ -10,11 +10,13 @@
 
     <title>Fanicon</title>
     <style id="styles">
-      .icon g{
+      #designContainer .icon g{
         fill: rgb(0, 0, 0);
       }
-      .icon{
+      #designContainer .icon{
         margin: 10px;
+        height: 100px;
+        width: 100px;
       }
       *{
         padding: 0;
@@ -89,6 +91,12 @@
         border-radius: 10px;
         padding: 10px;
         float: left;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
       }
       .optionsPanel{
         margin: 10px;
@@ -168,9 +176,9 @@
               <details class="cardStyle">
                 <summary>Size settings</summary><br>
                 <label>Icon Size</label><br>
-                <input type="range" id="inputIconSize"/><br>
+                <input type="range" id="inputIconSize" min="20" max="260" value="100"/><br>
                 <label>Spacing</label><br>
-                <input type="range" id="inputIconMargin"/>
+                <input type="range" id="inputIconMargin" min="0" max="100" value="10"/>
               </details>
               <div class="cardStyle">
                 <input class="textinput form-control mr-sm-2" type="text" placeholder="Designname" aria-label="Designname">
