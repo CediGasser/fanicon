@@ -4,14 +4,6 @@ const txtSearchIcon = document.getElementById('txtSearchIcon')
 const btnSearchIcon = document.getElementById('btnSearchIcon')
 const divDesign = document.getElementById('designContainer')
 
-function addToDesign(e){
-    console.log(e)
-    let str = divDesign.innerHTML
-    str += e.target.closest('div').children['0']
-    divDesign.innerHTML = str
-    console.log(e.target.children['0'])
-}
-
 btnSearchIcon.addEventListener('click', async () => {
     const icons = await getIcons(txtSearchIcon.value)
 
@@ -19,13 +11,11 @@ btnSearchIcon.addEventListener('click', async () => {
 
     icons.forEach(icon => {
         str += `
-        <div class="card cardStyle iconCard text-center" data-id="${icon.id}">
+        <button data-id="${icon.id}"><div class="card cardStyle iconCard text-center">
             ${icon.svg}
-            <div class="card-body">
-                <h5 class="card-title">${icon.name}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">${icon.theme.name}</h6>
-            </div>
-        </div>`
+            <h5 class="card-title">${icon.name}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">${icon.theme.name}</h6>
+        </div></button>`
     })
 
 
@@ -33,7 +23,7 @@ btnSearchIcon.addEventListener('click', async () => {
 
     iconCardsContainer.innerHTML = str
 
-    let iconCards = iconCardsContainer.querySelectorAll('div[class="card cardStyle iconCard text-center"]');
+    let iconCards = iconCardsContainer.querySelectorAll('button')
     iconCards.forEach(card => {
         card.addEventListener ('click', addToDesign);
     });
@@ -41,3 +31,9 @@ btnSearchIcon.addEventListener('click', async () => {
 
 btnSearchIcon.click()
 
+function addToDesign(e){
+    debugger
+    console.log(e)
+    svg = e.target.querySelectorAll('svg')
+    divDesign.appendChild(svg)
+}

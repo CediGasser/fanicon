@@ -24,6 +24,11 @@ services:
       - backend
     networks:
       - fanicon
+    volumes:
+      - type: bind
+        source: ./frontend/html
+        target: /etc/nginx/html
+        consistency: consistent
 
   postgres:
     container_name: postgres
