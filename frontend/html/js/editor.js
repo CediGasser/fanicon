@@ -33,6 +33,7 @@ btnSearchIcon.click()
 
 function addToDesign(e){
     let svg = e.target.closest('div').querySelector('svg').cloneNode(true)
+    svg.onclick = deleteItselfe
     divDesign.appendChild(svg)
 }
 
@@ -87,4 +88,9 @@ function CCSStylesheetRuleStyle(stylesheet, selectorText, style, value){
       return CCSstyle[style]
     else
       return CCSstyle[style] = value
+  }
+
+  function deleteItselfe(e) {
+      let svg = e.target.closest('svg')
+      svg.parentNode.removeChild(svg)
   }
