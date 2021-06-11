@@ -83,8 +83,9 @@
         margin: 1rem;
       }
       .design-container{
-        width: 1440px;
+        max-width: 1440px;
         height: 810px; 
+        width: 100%;
         box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.67) inset;
         -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.67) inset;
         -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.67) inset;
@@ -101,7 +102,7 @@
       .optionsPanel{
         margin: 10px;
         float: left;
-        align-items: stretch;
+        display: inline;
       }
       .cardStyle{
         box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.67);
@@ -126,6 +127,18 @@
       }
       summary{
         outline: none;
+      }
+      .optionSection{
+        width: 17rem;
+        height: fit-content;
+      }
+
+      @media screen and (max-width: 1890px) {
+        .optionsPanel{
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
       }
     </style>
   </head>
@@ -166,25 +179,25 @@
           <div class="editor">
             <div class="design-container" id="designContainer"></div>
             <div class="optionsPanel">
-              <details class="cardStyle">
+              <details class="cardStyle optionSection">
                 <summary>Instructions</summary><br>
                 <p>Click an icon to delete</p>
               </details>
-              <details class="cardStyle">
+              <details class="cardStyle optionSection">
                 <summary>Color settings</summary><br>
                 <label>Background</label><br>
-                <input type="color" id="inputBgColor"/><br>
+                <input type="color" id="inputBgColor" value="#FFFFFF"/><br>
                 <label>Icons</label><br>
                 <input type="color" id="inputIconColor"/>
               </details>
-              <details class="cardStyle">
+              <details class="cardStyle optionSection">
                 <summary>Size settings</summary><br>
                 <label>Icon Size</label><br>
                 <input type="range" id="inputIconSize" min="20" max="260" value="100"/><br>
                 <label>Spacing</label><br>
                 <input type="range" id="inputIconMargin" min="0" max="100" value="10"/>
               </details>
-              <div class="cardStyle">
+              <div class="cardStyle optionSection">
                 <input class="textinput form-control mr-sm-2" type="text" placeholder="Designname" aria-label="Designname">
                 <button class="btn1">Save</button>
               </div>
@@ -192,8 +205,8 @@
           </div>
           <div class="spacer"></div>
           <div class="form-inline my-2 my-lg-0">
-            <input class="textinput form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="txtSearchIcon">
-            <button class="btn btn-outline-success my-2 my-sm-0" id="btnSearchIcon">Search</button>
+            <input class="textinput form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="txtSearchIcon" style="float: left;">
+            <button class="btn btn-outline-success my-2 my-sm-0" id="btnSearchIcon" style="float: left; margin: 10px;">Search</button>
           </div>
           <div id="icons-add-container"></div>
         </main>

@@ -29,6 +29,15 @@ btnSearchIcon.addEventListener('click', async () => {
     });
 })
 
+txtSearchIcon.addEventListener('keyup', e => {
+    if (e.keyCode === 13) {
+        // Cancel the default action, if needed
+        e.preventDefault();
+        // Trigger the button element with a click
+        btnSearchIcon.click();
+      }
+})
+
 btnSearchIcon.click()
 
 function addToDesign(e){
