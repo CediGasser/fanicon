@@ -12,8 +12,6 @@ getusers().then(users => {
             </tr>`
     })
 
-    console.log(str)
-
     document.getElementById('userlist').innerHTML = str
 })
 

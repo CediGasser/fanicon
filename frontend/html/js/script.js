@@ -84,3 +84,12 @@ export async function upgradeToVip(){
         location.href = "/home.html"
     }
 }
+
+export async function getAuth(){
+    const response = await fetch('api/auth/info')
+
+    if (response.status == 200){
+        const body = await response.json()
+        return body.authorities
+    }
+}
