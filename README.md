@@ -129,7 +129,9 @@ Als User im Editor kann ich Icons aus der Library oder aus dem Design per Drag &
 
 # Copyright
 Das Bild welches auf der Startwebseite gebraucht wird, wurde uns von der Website zur Verfügung gestellt.
-Link Website: https://pixabay.com/photos/mushrooms-eat-food-vegetarian-6320451/
+
+Link Webseite: https://pixabay.com/photos/mushrooms-eat-food-vegetarian-6320451/
+
 Link Licence: https://pixabay.com/service/license/
 
 # Architektur
