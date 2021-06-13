@@ -1,4 +1,4 @@
-import { getIcons } from './script.js';
+import { getIcons, postDesign } from './script.js';
 
 const txtSearchIcon = document.getElementById('txtSearchIcon')
 const btnSearchIcon = document.getElementById('btnSearchIcon')
@@ -41,8 +41,10 @@ txtSearchIcon.addEventListener('keyup', e => {
 btnSearchIcon.click()
 
 function addToDesign(e){
-    let svg = e.target.closest('div').querySelector('svg').cloneNode(true)
+    let div = e.target.closest('div')
+    let svg = div.querySelector('svg').cloneNode(true)
     svg.onclick = deleteItselfe
+    svg.dataset.id = div.dataset.id
     divDesign.appendChild(svg)
 }
 
@@ -52,21 +54,41 @@ document.getElementById('inputBgColor').addEventListener('input', e => {
 
 document.getElementById('inputIconColor').addEventListener('input', e =>{
     let color = e.target.value
-    CCSStylesheetRuleStyle('styles', '#designContainer .icon g', 'fill', color);
+    CCSStylesheetRuleStyle('styles', '#designContainer .icon g', 'fill', color)
 })
 
 document.getElementById('inputIconMargin').addEventListener('input', e => {
     let margin = e.target.value + 'px'
-    console.log('margin: ' + margin)
-    CCSStylesheetRuleStyle('styles', '#designContainer .icon', 'margin', margin);
+    CCSStylesheetRuleStyle('styles', '#designContainer .icon', 'margin', margin)
 })
 
 document.getElementById('inputIconSize').addEventListener('input', e => {
     let size = e.target.value + 'px'
-    console.log('size: ' + size)
-    CCSStylesheetRuleStyle('styles', '#designContainer .icon', 'height', size);
-    CCSStylesheetRuleStyle('styles', '#designContainer .icon', 'width', size);
+    CCSStylesheetRuleStyle('styles', '#designContainer .icon', 'height', size)
+    CCSStylesheetRuleStyle('styles', '#designContainer .icon', 'width', size)
 })
+
+export function onPostDesign() {
+    let name = document.getElementById('txtDesignName').value
+    let bgColor = divDesign.style.backgroundColor
+    let iconSize = CCSStylesheetRuleStyle('styles', '#designContainer .icon', 'height')
+    let iconMargin = CCSStylesheetRuleStyle('styles', '#designContainer .icon', 'margin')
+    let iconColor = CCSStylesheetRuleStyle('styles', '#designContainer .icon g', 'fill')
+    let iconSvgs = divDesign.childNodes
+    let icons = []
+
+    
+    let i = 1
+    for (const icon of iconSvgs) {
+        icons.push({
+            iconId: icon.dataset.id,
+            position: i
+        })
+        i += 1
+    }
+
+    postDesign(name, bgColor, iconSize, iconMargin, iconColor, icons)
+}
 
 function CCSStylesheetRuleStyle(stylesheet, selectorText, style, value){
     var CCSstyle = undefined, rules;

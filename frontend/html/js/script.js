@@ -93,3 +93,24 @@ export async function getAuth(){
         return body.authorities
     }
 }
+
+export async function postDesign(name, bgColor, iconSize, iconMargin, iconColor, icons){
+    let data = {
+        name: name,
+        bgColor: bgColor,
+        iconSize: iconSize,
+        iconMargin: iconMargin,
+        iconColor: iconColor,
+        icons: icons
+    }
+
+    const response = await fetch("api/designs", {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    
+    if (response.status == 200){
+        return response
+    }
+}

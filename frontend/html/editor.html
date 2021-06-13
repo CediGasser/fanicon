@@ -136,7 +136,7 @@
     <section class="Form my-4 mx-5">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="col-lg-1">
-          <a href="./index.html"><img src="assets/logo_round.svg" class="img-fluid navLogo" alt=""></a>
+          <a href="./index.html"><img src="assets/logo_round.svg" class="img-fluid navLogo" alt="Fanicon flame logo"></a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -155,7 +155,7 @@
             </li>
             <div id="vipNavLink"></div>
 
-            <script type="module" async>
+            <script type="module">
               import { isUserGroupThenWriteAtId } from './js/helper.js';
 
               isUserGroupThenWriteAtId('NORMAL', `<li class="nav-item">
@@ -165,7 +165,7 @@
 
             <div id="adminNavLink"></div>
 
-            <script type="module" async>
+            <script type="module">
               import { isUserGroupThenWriteAtId } from './js/helper.js';
 
               isUserGroupThenWriteAtId('ADMIN', `<li class="nav-item">
@@ -205,17 +205,25 @@
 
               <div id="saveControl"></div>
 
-              <script type="module" async>
+              <script type="module">
                 import { isUserGroupThenWriteAtId } from './js/helper.js';
+                import { onPostDesign } from './js/editor.js';
 
                 isUserGroupThenWriteAtId('VIP', `<div class="cardStyle optionSection">
-                    <input class="textinput form-control mr-sm-2" type="text" placeholder="Designname" aria-label="Designname">
-                    <button class="btn1">Save</button>
-                  </div>`, 'saveControl')
+                    <input class="textinput form-control mr-sm-2" type="text" placeholder="Designname" id="txtDesignName" aria-label="Designname">
+                    <button class="btn1" id="btnSaveDesign">Save</button>
+                  </div>`, 'saveControl').then(() => {
+                  document.getElementById('btnSaveDesign').addEventListener('click', onPostDesign)
+                })
+                
                 isUserGroupThenWriteAtId('ADMIN', `<div class="cardStyle optionSection">
-                  <input class="textinput form-control mr-sm-2" type="text" placeholder="Designname" aria-label="Designname">
-                  <button class="btn1">Save</button>
-                </div>`, 'saveControl')
+                  <input class="textinput form-control mr-sm-2" type="text" placeholder="Designname" id="txtDesignName" aria-label="Designname">
+                  <button class="btn1" id="btnSaveDesign">Save</button>
+                </div>`, 'saveControl').then(() => {
+                  document.getElementById('btnSaveDesign').addEventListener('click', onPostDesign)
+                })
+
+                
               </script>
               
             </div>
