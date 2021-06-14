@@ -104,7 +104,7 @@ export async function postDesign(name, bgColor, iconSize, iconMargin, iconColor,
         icons: icons
     }
 
-    const response = await fetch("api/designs", {
+    const response = await fetch('api/designs', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
@@ -112,5 +112,23 @@ export async function postDesign(name, bgColor, iconSize, iconMargin, iconColor,
     
     if (response.status == 200){
         return response
+    }
+}
+
+export async function getDesigns(){
+    const response = await fetch('api/designs')
+
+    if (response.status == 200){
+        const designs = await response.json()
+        return designs
+    }
+}
+
+export async function getDesign(id){
+    const response = await fetch(`api/designs/${id}`)
+
+    if (response.status == 200){
+        const design = await response.json()
+        return design
     }
 }

@@ -208,12 +208,20 @@
               <script type="module">
                 import { isUserGroupThenWriteAtId } from './js/helper.js';
                 import { onPostDesign } from './js/editor.js';
+                import { getDesign } from './js/script.js';
+
+                const queryString = window.location.search;
+                const urlParams = new URLSearchParams(queryString);
+                const designId = urlParams.get('id')
 
                 isUserGroupThenWriteAtId('VIP', `<div class="cardStyle optionSection">
                     <input class="textinput form-control mr-sm-2" type="text" placeholder="Designname" id="txtDesignName" aria-label="Designname">
                     <button class="btn1" id="btnSaveDesign">Save</button>
                   </div>`, 'saveControl').then(() => {
                   document.getElementById('btnSaveDesign').addEventListener('click', onPostDesign)
+                  getDesign(designId).then(design => {
+                    document.getElementById('txtDesignName').value = design.name
+                  })
                 })
                 
                 isUserGroupThenWriteAtId('ADMIN', `<div class="cardStyle optionSection">
@@ -221,6 +229,9 @@
                   <button class="btn1" id="btnSaveDesign">Save</button>
                 </div>`, 'saveControl').then(() => {
                   document.getElementById('btnSaveDesign').addEventListener('click', onPostDesign)
+                  getDesign(designId).then(design => {
+                    document.getElementById('txtDesignName').value = design.name
+                  })
                 })
 
                 

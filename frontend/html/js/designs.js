@@ -1,0 +1,34 @@
+import { getDesigns } from './script.js';
+
+let designCardsContainer = document.getElementById('designsContainer')
+
+const designs = await getDesigns()
+
+let str = ''
+
+designs.forEach(design => {
+
+    let iconStr = ''
+    let iconCount = 4
+    for (const icon of design.icons ) {
+        if (icon.name !== 'Placeholder') {
+            iconStr += icon.svg
+            iconCount -= 1
+        }
+        if (iconCount <= 0){
+            break;
+        }
+    }
+
+    str += `
+    <a class="nolink" href="./editor.html?id=${design.id}"><div class="card cardStyle iconCard text-center designCard" style="background-color: ${design.bgColor};">
+        <div class="iconsInDesign">
+            ${iconStr}
+        </div>
+        <h5 class="card-title" style="color: ${design.iconColor};">${design.name}</h5>
+        <h6 class="card-subtitle mb-2 text-muted" style="color: ${design.iconColor};">made by</h6>
+        <h5 class="card-title" style="color: ${design.iconColor};">${design.userName}</h5>
+    </div></a>`
+})
+
+designCardsContainer.innerHTML = str
