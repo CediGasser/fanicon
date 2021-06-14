@@ -115,8 +115,13 @@ export async function postDesign(name, bgColor, iconSize, iconMargin, iconColor,
     }
 }
 
-export async function getDesigns(){
-    const response = await fetch('api/designs')
+export async function getDesigns(userName){
+    let url = `api/designs`
+    if (userName != null) {
+        url = `api/${userName}/designs`
+    }
+
+    const response = await fetch(url)
 
     if (response.status == 200){
         const designs = await response.json()
