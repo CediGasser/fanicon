@@ -94,6 +94,15 @@ export async function getAuth(){
     }
 }
 
+export async function getUser(){
+    const response = await fetch('api/auth/info')
+
+    if (response.status == 200){
+        const body = await response.json()
+        return body
+    }
+}
+
 export async function postDesign(name, bgColor, iconSize, iconMargin, iconColor, icons){
     let data = {
         name: name,
@@ -117,8 +126,8 @@ export async function postDesign(name, bgColor, iconSize, iconMargin, iconColor,
 
 export async function getDesigns(userName){
     let url = `api/designs`
-    if (userName != null) {
-        url = `api/${userName}/designs`
+    if (userName) {
+        url = `api/users/${userName}/designs`
     }
 
     const response = await fetch(url)

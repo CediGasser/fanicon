@@ -1,9 +1,7 @@
 package com.cedricgasser.fanicon.service;
 
 import com.cedricgasser.fanicon.dto.DesignDto;
-import com.cedricgasser.fanicon.dto.UserDto;
 import com.cedricgasser.fanicon.model.Design;
-import com.cedricgasser.fanicon.model.Icon;
 import com.cedricgasser.fanicon.model.User;
 import com.cedricgasser.fanicon.model.UserGroup;
 import com.cedricgasser.fanicon.repository.DesignRepository;
@@ -60,7 +58,7 @@ public class UserService {
         List<Design> designs = designRepository.getAllByUser(userRepository.findById(name).orElseThrow());
         List<DesignDto> designDtos = new ArrayList();
         for (Design design: designs) {
-            designDtos.add(new DesignDto(design.getId(), design.getName(), design.getBgColor(), design.getIconSize(), design.getIconMargin(), design.getUser().getName(), designService.getIconsFromDesignId(design.getId())));
+            designDtos.add(new DesignDto(design.getId(), design.getName(), design.getBgColor(), design.getIconSize(), design.getIconMargin(), design.getIconColor(), design.getUser().getName(), designService.getIconsFromDesignId(design.getId())));
         }
         return designDtos;
     }

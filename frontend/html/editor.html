@@ -218,21 +218,32 @@
                     <input class="textinput form-control mr-sm-2" type="text" placeholder="Designname" id="txtDesignName" aria-label="Designname">
                     <button class="btn1" id="btnSaveDesign">Save</button>
                   </div>`, 'saveControl').then(() => {
-                  document.getElementById('btnSaveDesign').addEventListener('click', onPostDesign)
-                  getDesign(designId).then(design => {
-                    document.getElementById('txtDesignName').value = design.name
+                    let btn = document.getElementById('btnSaveDesign')
+                    if (btn) {
+                      btn.addEventListener('click', onPostDesign)
+                      if (designId){
+                        getDesign(designId).then(design => {
+                          document.getElementById('txtDesignName').value = design.name
+                        })
+                      }
+                    }
                   })
-                })
+                
                 
                 isUserGroupThenWriteAtId('ADMIN', `<div class="cardStyle optionSection">
                   <input class="textinput form-control mr-sm-2" type="text" placeholder="Designname" id="txtDesignName" aria-label="Designname">
                   <button class="btn1" id="btnSaveDesign">Save</button>
                 </div>`, 'saveControl').then(() => {
-                  document.getElementById('btnSaveDesign').addEventListener('click', onPostDesign)
-                  getDesign(designId).then(design => {
-                    document.getElementById('txtDesignName').value = design.name
+                    let btn = document.getElementById('btnSaveDesign')
+                    if (btn) {
+                      btn.addEventListener('click', onPostDesign)
+                      if (designId){
+                        getDesign(designId).then(design => {
+                          document.getElementById('txtDesignName').value = design.name
+                        })
+                      }
+                    }
                   })
-                })
 
                 
               </script>

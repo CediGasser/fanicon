@@ -9,7 +9,6 @@ import com.cedricgasser.fanicon.repository.DesignRepository;
 import com.cedricgasser.fanicon.repository.IconInDesignRepository;
 import com.cedricgasser.fanicon.repository.IconRepository;
 import com.cedricgasser.fanicon.repository.UserRepository;
-import org.hibernate.mapping.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -17,9 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -43,7 +40,7 @@ public class DesignService {
     public DesignDto add(final DesignDto designDto) {
         final SecurityContext context = SecurityContextHolder.getContext();
         String userName = context.getAuthentication().getName();
-        Design design = new Design(designDto.getName(), designDto.getBgColor(), designDto.getIconSize(), designDto.getIconMargin(), userRepository.findById(userName).orElseThrow());
+        Design design = new Design(designDto.getName(), designDto.getBgColor(), designDto.getIconSize(), designDto.getIconMargin(), designDto.getIconColor(), userRepository.findById(userName).orElseThrow());
         Long designId = designRepository.save(design).getId();
         for (IconInDesignDto iconDto : designDto.getIcons()) {
             IconInDesign iconInDesign = new IconInDesign(designRepository.findById(designId).orElseThrow(),iconRepository.findById(iconDto.getIconId()).orElseThrow(), iconDto.getPosition());
@@ -65,7 +62,7 @@ public class DesignService {
             icons.add(new IconInDesignDto(designIcon.getIcon().getId(), designIcon.getIcon().getName(), designIcon.getIcon().getSvg(), designIcon.getIcon().getTheme(), designIcon.getIcon().getStyle(), designIcon.getIcon().getCopyrighted(), designIcon.getIcon().getCopyrightSource(), designIcon.getPosition()));
         }
 
-        return new DesignDto(design.getId(), design.getName(), design.getBgColor(), design.getIconSize(), design.getIconMargin(),design.getUser().getName(), icons);
+        return new DesignDto(design.getId(), design.getName(), design.getBgColor(), design.getIconSize(), design.getIconMargin(), design.getIconColor(), design.getUser().getName(), icons);
     }
 
     @Transactional(readOnly = true)
@@ -87,7 +84,7 @@ public class DesignService {
                 .collect(Collectors.toList());
         List<DesignDto> designDtos = new ArrayList();
         for (Design design: designList) {
-            designDtos.add(new DesignDto(design.getId(), design.getName(), design.getBgColor(), design.getIconSize(), design.getIconMargin(), design.getUser().getName(),getIconsFromDesignId(design.getId())));
+            designDtos.add(new DesignDto(design.getId(), design.getName(), design.getBgColor(), design.getIconSize(), design.getIconMargin(), design.getIconColor(), design.getUser().getName(),getIconsFromDesignId(design.getId())));
         }
         return designDtos;
     }
