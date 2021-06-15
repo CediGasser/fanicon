@@ -10,7 +10,7 @@
     <link href="./css/stylesheet.css" rel="stylesheet">
     
     <title>Fanicon</title>
-    <style>
+    <style id="styles">
       *{
         padding: 0;
         margin: 0;
@@ -41,6 +41,14 @@
         background: white;
         border: 1px solid;
         color: black;
+      }
+      .buyVipDiv{
+        margin: auto;
+        width: 400px;
+        height: 200px;
+      }
+      .buyVipDiv a{
+        margin-top: 20px;
       }
     </style>
   </head>
@@ -93,33 +101,31 @@
         </div>
       </nav>
       <h1 class="font-weight-bold py-3">Home</h1>
-          <div>
-            <div class="container">
-              <div class="row">
-             <div class="col-xs-2"></div>
-             <div>
-             <h1 class="col-xs-8 text-center">Welcome to Fanicon</h1>
-             </div> 
-             <a class="btn btn-primary col-xs-2 pull-right mar" href="vip.html">Upgrade to VIP</a>
-           </div>
-           </div>
-            <form>
-              <h4>My Designs</h4>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
-            </form>
-          </div>
-        </div>
-      </div>
+      
+      <h1 class="col-xs-8 text-center">Your designs:</h1>
+      <div class="container designCardContainer" id="designsContainer"></div>
+      
+
+      <div id="buyVipComesHere"></div>
+
+      <script type="module" async>
+        import { isUserGroupThenWriteAtId } from './js/helper.js';
+
+        isUserGroupThenWriteAtId('NORMAL', `<div class="align-middle buyVipDiv cardStyle text-center card">
+        <h5 class="card-title" >Seems like you are still not VIP</h5>
+        <h6 class="card-subtitle mb-2 text-muted" >Buy VIP now to be able to save your designs!</h6>
+        <h6 class="card-subtitle mb-2 text-muted" >Once you saved some designs as VIP, they will be displayed here.</h6>
+        <a class="btn btn-primary" href="vip.html">Upgrade to VIP</a>
+      </div>`, 'buyVipComesHere')
+      </script>
+      
     </section>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-
+    <script src="./js/home.js" type="module"></script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

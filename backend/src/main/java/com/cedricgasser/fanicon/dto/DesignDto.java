@@ -12,17 +12,19 @@ public class DesignDto implements Serializable {
 
     private final String iconSize;
     private final String iconMargin;
+    private final String iconColor;
     private final String userName;
 
     private final List<IconInDesignDto> icons;
 
-    public DesignDto(Long id, String name, String bgColor, String iconSize, String iconMargin, String UserName, List<IconInDesignDto> icons){
+    public DesignDto(Long id, String name, String bgColor, String iconSize, String iconMargin, String iconColor, String UserName, List<IconInDesignDto> icons){
 
         this.id = id;
         this.name = name;
         this.bgColor = bgColor;
         this.iconSize = iconSize;
         this.iconMargin = iconMargin;
+        this.iconColor = iconColor;
         this.userName = UserName;
         this.icons = icons;
     }
@@ -53,5 +55,9 @@ public class DesignDto implements Serializable {
 
     public List<IconInDesignDto> getIcons() {
         return icons;
+    }
+
+    public String getIconColor() {
+        return iconColor;
     }
 }

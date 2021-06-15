@@ -30,3 +30,32 @@
 .navLogo{
     margin-right: 20px;
 }
+
+.designCard{
+    height: 250px;
+    width: 400px;
+}
+
+.designCard svg{
+    height: 80px;
+}
+
+.iconsInDesign{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.nolink{
+    text-decoration: none;
+}
+
+.designCardContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+}

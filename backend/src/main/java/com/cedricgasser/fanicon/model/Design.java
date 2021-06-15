@@ -19,6 +19,7 @@ public class Design {
 
     private String iconSize;
     private String iconMargin;
+    private String iconColor;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_name")
@@ -29,11 +30,12 @@ public class Design {
 
     protected Design(){}
 
-    public Design(final String name, final String bgColor, final String iconSize, final String iconMargin, final User user){
+    public Design(final String name, final String bgColor, final String iconSize, final String iconMargin, final String iconColor, final User user){
         this.name = name;
         this.bgColor = bgColor;
         this.iconSize = iconSize;
         this.iconMargin = iconMargin;
+        this.iconColor = iconColor;
         this.user = user;
     }
 
@@ -79,5 +81,13 @@ public class Design {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getIconColor() {
+        return iconColor;
+    }
+
+    public void setIconColor(String iconColor) {
+        this.iconColor = iconColor;
     }
 }

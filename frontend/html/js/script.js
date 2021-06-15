@@ -94,6 +94,15 @@ export async function getAuth(){
     }
 }
 
+export async function getUser(){
+    const response = await fetch('api/auth/info')
+
+    if (response.status == 200){
+        const body = await response.json()
+        return body
+    }
+}
+
 export async function postDesign(name, bgColor, iconSize, iconMargin, iconColor, icons){
     let data = {
         name: name,
@@ -104,7 +113,7 @@ export async function postDesign(name, bgColor, iconSize, iconMargin, iconColor,
         icons: icons
     }
 
-    const response = await fetch("api/designs", {
+    const response = await fetch('api/designs', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
@@ -112,5 +121,28 @@ export async function postDesign(name, bgColor, iconSize, iconMargin, iconColor,
     
     if (response.status == 200){
         return response
+    }
+}
+
+export async function getDesigns(userName){
+    let url = `api/designs`
+    if (userName) {
+        url = `api/users/${userName}/designs`
+    }
+
+    const response = await fetch(url)
+
+    if (response.status == 200){
+        const designs = await response.json()
+        return designs
+    }
+}
+
+export async function getDesign(id){
+    const response = await fetch(`api/designs/${id}`)
+
+    if (response.status == 200){
+        const design = await response.json()
+        return design
     }
 }
