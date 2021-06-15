@@ -7,10 +7,12 @@ import com.cedricgasser.fanicon.model.UserGroup;
 import com.cedricgasser.fanicon.repository.DesignRepository;
 import com.cedricgasser.fanicon.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,15 +38,22 @@ public class UserService {
     public Optional<UserGroup> login(final String name, final String password) {
 
         User user = userRepository.checkPassword(name, password);
+
+        if (user == null){
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, "Password or Username incorrect", new Exception("Password or Username incorrect"));
+        }
+
         return Optional.of(user.getUserGroup());
     }
 
     @Transactional
     public UserGroup upgradeToVip() {
         final SecurityContext context = SecurityContextHolder.getContext();
-        User userToUpdate = userRepository.getByName(context.getAuthentication().getName());
-        userToUpdate.setUserGroup(UserGroup.VIP);
-        return userRepository.save(userToUpdate).getUserGroup();
+        User oldUser = userRepository.getByName(context.getAuthentication().getName());
+        userRepository.changeUserGroup(oldUser.getName(), UserGroup.VIP);
+
+        return userRepository.getByName(oldUser.getName()).getUserGroup();
     }
 
     @Transactional

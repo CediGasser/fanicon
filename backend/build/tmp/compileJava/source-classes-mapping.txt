@@ -16,8 +16,8 @@ com/cedricgasser/fanicon/controller/ThemeController.java
  com.cedricgasser.fanicon.controller.ThemeController
 com/cedricgasser/fanicon/model/User.java
  com.cedricgasser.fanicon.model.User
-com/cedricgasser/fanicon/controller/AuthController.java
- com.cedricgasser.fanicon.controller.AuthController
+com/cedricgasser/fanicon/model/IconInDesign.java
+ com.cedricgasser.fanicon.model.IconInDesign
 com/cedricgasser/fanicon/repository/DesignRepository.java
  com.cedricgasser.fanicon.repository.DesignRepository
 com/cedricgasser/fanicon/service/UserService.java
@@ -50,5 +50,5 @@ com/cedricgasser/fanicon/model/Design.java
  com.cedricgasser.fanicon.model.Design
 com/cedricgasser/fanicon/repository/ThemeRepository.java
  com.cedricgasser.fanicon.repository.ThemeRepository
-com/cedricgasser/fanicon/model/IconInDesign.java
- com.cedricgasser.fanicon.model.IconInDesign
+com/cedricgasser/fanicon/controller/AuthController.java
+ com.cedricgasser.fanicon.controller.AuthController
