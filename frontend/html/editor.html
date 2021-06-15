@@ -186,7 +186,8 @@
             <div class="optionsPanel">
               <details class="cardStyle optionSection">
                 <summary>Instructions</summary><br>
-                <p>Click an icon to delete</p>
+                <p>Scroll down to search for icons and add them by clicking on them.</p>
+                <p>In the design, click on an icon to delete it.</p>
               </details>
               <details class="cardStyle optionSection">
                 <summary>Color settings</summary><br>
@@ -215,9 +216,10 @@
                 const designId = urlParams.get('id')
 
                 isUserGroupThenWriteAtId('VIP', `<div class="cardStyle optionSection">
-                    <input class="textinput form-control mr-sm-2" type="text" placeholder="Designname" id="txtDesignName" aria-label="Designname">
-                    <button class="btn1" id="btnSaveDesign">Save</button>
-                  </div>`, 'saveControl').then(() => {
+                  <p>Choose the same name as another one of your designs to overwrite it.</p>
+                  <input class="textinput form-control mr-sm-2" type="text" placeholder="Designname" id="txtDesignName" aria-label="Designname">
+                  <button class="btn1" id="btnSaveDesign">Save</button>
+                </div>`, 'saveControl').then(() => {
                     let btn = document.getElementById('btnSaveDesign')
                     if (btn) {
                       btn.addEventListener('click', onPostDesign)
@@ -231,6 +233,7 @@
                 
                 
                 isUserGroupThenWriteAtId('ADMIN', `<div class="cardStyle optionSection">
+                  <p>Choose the same name as another one of your designs to overwrite it.</p>
                   <input class="textinput form-control mr-sm-2" type="text" placeholder="Designname" id="txtDesignName" aria-label="Designname">
                   <button class="btn1" id="btnSaveDesign">Save</button>
                 </div>`, 'saveControl').then(() => {

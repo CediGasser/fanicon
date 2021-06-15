@@ -9,4 +9,5 @@ import java.util.List;
 
 public interface DesignRepository extends CrudRepository<Design, Long> {
     public List<Design> getAllByUser(final User user);
+    public Design getByNameAndUser(final String name, final User user);
 }
