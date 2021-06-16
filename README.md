@@ -34,6 +34,7 @@ Klasse S-Inf18aL
   * `Docker`, `Docker-Compose` und `Java 11` sind vorausgesetzt
   * `cd backend; ./gradlew bootJar` backend builden
   * `docker-compose up -d` ausführen
+  * [localhost](http://localhost) öffnen
 
 # Beschreibung
 
