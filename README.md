@@ -31,7 +31,7 @@ Klasse S-Inf18aL
 
 # Starten
 
-  * `Docker` und `Docker-Compose` sind vorausgesetzt
+  * `Docker`, `Docker-Compose` und `Java 11` sind vorausgesetzt
   * `cd backend; ./gradlew bootJar` backend builden
   * `docker-compose up -d` ausführen
 
@@ -69,14 +69,14 @@ Nutzergruppe: Admin
 
 ![jacob](dok/jacob.png) 
 
-Er ist der Besitzer der App und hat diese mitentwickelt. Demensprechend hat er auch gute Computerkenntnisse. Er verwaltet hauptsächlich die User-Accounts und nutzt dazu das Admin-Interface unserer App wo er nach allen Usern suchen und filtern kann.
+Er ist der Besitzer der App und hat diese mitentwickelt. Demensprechend hat er auch gute Computerkenntnisse. Er verwaltet hauptsächlich die User-Accounts und nutzt dazu das Admin-Interface seiner App, in welchem er alle User anzeigen kann.
 
 ### Frizli
 Nutzergruppe: Normaler User
 
 ![fritzli](dok/frizli.png) 
 
-Der Frizli kann sich noch nicht selbst einen VIP Account kaufen. Er kenn sich aber schon genügend mit der Technik aus und erstellt gerne Designs, welche er als Hintergrund bei seinem Schul-PC einstellt.
+Der Frizli kann sich noch nicht selbst einen VIP Account kaufen. Er kennt sich aber schon genügend mit der Technik aus und erstellt gerne Designs, welche er als Hintergrund bei seinem Schul-PC einstellt.
 
 ### Cole Sprouse
 Nutzergruppe: VIP User
@@ -126,6 +126,13 @@ Als User im Editor kann ich diverse Parameter wie Farbe, Grösse und Abstand etc
 ### Drag &amp; Drop aus Icon-Library (Optional)
 
 Als User im Editor kann ich Icons aus der Library oder aus dem Design per Drag &amp; Drop herumschieben, um schnell und einfach die Icons anzuordnen.
+
+# Copyright
+Das Bild welches auf der Startwebseite gebraucht wird, wurde uns von der Website zur Verfügung gestellt.
+
+Link Webseite: https://pixabay.com/photos/mushrooms-eat-food-vegetarian-6320451/
+
+Link Licence: https://pixabay.com/service/license/
 
 # Architektur
 

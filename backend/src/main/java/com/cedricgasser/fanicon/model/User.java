@@ -10,12 +10,7 @@ import java.util.List;
 @NamedQuery(name = "User.checkPassword", query = "SELECT u FROM User u WHERE u.name = :name and password = public.crypt(text(:password), text(password))")
 public class User {
     @Id
-    @SequenceGenerator(name = "user_sequence", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_sequence")
-    @Column(name = "id", nullable = false, updatable = false)
-    private Long id;
-
-    @Column(nullable = false, unique = true)
+    @Column(name = "name", nullable = false, updatable = false)
     private String name;
 
     @Column(nullable = false, unique = true)
@@ -47,4 +42,5 @@ public class User {
     public String getName() { return name; }
     public String getEmail() { return email; }
     public String getPassword() { return password; }
+    public void setPassword(String password){ this.password = password; }
 }

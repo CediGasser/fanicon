@@ -7,7 +7,8 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
+    <link href="./css/stylesheet.css" rel="stylesheet">
+    
     <title>Fanicon</title>
     <style>
       *{
@@ -21,10 +22,6 @@
       .row{
         background:white;
         border-radius: 30px;
-      }
-      img{
-        border-top-left-radius: 30px;
-        border-bottom-left-radius: 30px;
       }
       .btn1{
         border: white;
@@ -41,6 +38,11 @@
         border: 1px solid;
         color: black;
       }
+      .picture{
+        border-radius: 30px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
     </style>
   </head>
   <body>
@@ -49,19 +51,79 @@
       <div class="container">
         <div class="row no-gutters">
           <div class="col-lg-5">
-            <img src="assets/logo_round.svg" class="img-fluid" alt="">
+            <img src="assets/logo_round.svg" class="container" alt="">
           </div>
           <div class="col-lg-7 px-5 pt-5">
             <h1 class="font-weight-bold py-3">Welcome to FANICON</h1>
             <form>
               <div class="form-row">
                 <div class="col-lg-5">
-                  <button type="button" class="btn1 mt-1 mb-2">Login</button>
+                  <a type="button" class="btn btn1 mt-1 mb-2" href="./login.html">Login</a>
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-lg-5">
-                  <button type="button" class="btn1 mt-1 mb-2">Sign Up</button>
+                  <a type="button" class="btn btn1 mt-1 mb-2" href="./signup.html">Sign Up</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="Form my-4 mx-5">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-lg-5">
+            <img src="assets/mushrooms.jpg" class="picture img-fluid cardStyle" alt="">
+           </div>
+          <div class="col-lg-7 px-5 pt-5">
+            <form>
+              <div class="form-row">
+                <div class="col-lg-5">
+                  <h1>Our sponsor</h1>
+                  <a type="text">Many thanks to our sponsor Mushrooms ©pixabay</a> 
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="Form my-4 mx-5">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-lg-5">
+            <img src="assets/Editorpres.PNG" class="picture img-fluid cardStyle" alt="">
+           </div>
+          <div class="col-lg-7 px-5 pt-5">
+            <form>
+              <div class="form-row">
+                <div class="col-lg-5">
+                  <h1>The Editor</h1>
+                  <a type="text">Sign up and use the editor to create your own design.</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="Form my-4 mx-5">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-lg-5">
+            <img src="assets/BuyVIPpres.PNG" class="picture img-fluid cardStyle" alt="">
+           </div>
+          <div class="col-lg-7 px-5 pt-5">
+            <form>
+              <div class="form-row">
+                <div class="col-lg-5">
+                  <h1>Buy VIP</h1>
+                  <a type="text">Buy VIP so you can save your design to your project later and view it later in the design overview.</a> 
                 </div>
               </div>
             </form>
@@ -74,7 +136,7 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-
+    <script src="js/index.js" type="module"></script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
