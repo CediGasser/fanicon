@@ -1,3 +1,107 @@
+:root{
+    /*design base: https://hihayk.github.io/shaper/#Nunito,%20sans-serif/1.4/1/2.98/0.8/2/0.5/314/100/46/20/0.5/2/false */
+
+
+    /* Typography */
+    --baseTextSize: 1rem;
+    --textSizeIncrement: 1.4;
+
+    --text-xs: calc(var(--baseTextSize) / var(--textSizeIncrement));
+    --text-s: var(--baseTextSize);
+    --text-m: calc(var(--text-s) * var(--textSizeIncrement));
+    --text-l: calc(var(--text-m) * var(--textSizeIncrement));
+    --text-xl: calc(var(--text-l) * var(--textSizeIncrement));
+
+    --lineHeightFixedAmount: 0.35rem;
+    --lineHeightRelativeAmount: 1.1em;
+    --globalLineHeight: calc(var(--lineHeightFixedAmount) + var(--lineHeightRelativeAmount));
+
+    --fontFamily: Nunito, sans-serif;
+
+
+    /* Spacing */
+    --unit: 0.5rem;
+    --spaceIncrement: 2;
+
+    --space-s: var(--unit);
+    --space-m: calc(var(--space-s) * var(--spaceIncrement));
+    --space-l: calc(var(--space-m) * var(--spaceIncrement));
+    --space-xl: calc(var(--space-l) * var(--spaceIncrement));
+    --space-2xl: calc(var(--space-xl) * var(--spaceIncrement));
+    --space-3xl: calc(var(--space-2xl) * var(--spaceIncrement));
+    --space-4xl: calc(var(--space-3xl) * var(--spaceIncrement));
+
+
+    /* Text frame */
+    --textFrameRatio: 2.98;
+    --textFrameY: 0.8em;
+    --textFrameX: calc(var(--textFrameY) * var(--textFrameRatio));
+
+
+    /* Color */
+    --accentH: 314;
+    --accentS: 100%;
+    --accentL: 46%;
+    --c-accent: hsl(var(--accentH), var(--accentS), var(--accentL));
+    --c-accentContrasted: hsl(var(--accentH), var(--accentS), 95%);
+
+    --greyH: var(--accentH);
+    --greyS: 5%;
+    --initialGreyLightness: 93%;
+    --greyscaleLightnessIncrement: 11.3%;
+
+    --grey1L:  var(--initialGreyLightness);
+    --grey2L:  calc(var(--initialGreyLightness) - var(--greyscaleLightnessIncrement) * 1);
+    --grey3L:  calc(var(--initialGreyLightness) - var(--greyscaleLightnessIncrement) * 2);
+    --grey4L:  calc(var(--initialGreyLightness) - var(--greyscaleLightnessIncrement) * 3);
+    --grey5L:  calc(var(--initialGreyLightness) - var(--greyscaleLightnessIncrement) * 4);
+    --grey6L:  calc(var(--initialGreyLightness) - var(--greyscaleLightnessIncrement) * 5);
+    --grey7L:  calc(var(--initialGreyLightness) - var(--greyscaleLightnessIncrement) * 6);
+    --grey8L:  calc(var(--initialGreyLightness) - var(--greyscaleLightnessIncrement) * 7);
+
+    --c-grey1: hsl(var(--greyH), var(--greyS), var(--grey1L));
+    --c-grey2: hsl(var(--greyH), var(--greyS), var(--grey2L));
+    --c-grey3: hsl(var(--greyH), var(--greyS), var(--grey3L));
+    --c-grey4: hsl(var(--greyH), var(--greyS), var(--grey4L));
+    --c-grey5: hsl(var(--greyH), var(--greyS), var(--grey5L));
+    --c-grey6: hsl(var(--greyH), var(--greyS), var(--grey6L));
+    --c-grey7: hsl(var(--greyH), var(--greyS), var(--grey7L));
+    --c-grey8: hsl(var(--greyH), var(--greyS), var(--grey8L));
+
+    --c-border: hsla(var(--greyH), var(--greyS), var(--grey8L), 0.1);
+    --c-overlay: hsla(var(--greyH), var(--greyS), var(--grey8L), 0.07);
+    --c-background: white;
+    --c-body: var(--c-grey8);
+    --c-bodyDimmed: hsla(var(--greyH), var(--greyS), var(--grey8L), 0.5);
+    --c-fieldBorder: var(--c-grey2);
+    --c-buttonBg: var(--c-grey2);
+
+
+    /* Layer */
+    --radius: 0.5rem;
+
+    --fieldBorderWidth: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+    
+    body{
+        --c-border: hsla(var(--greyH), var(--greyS), var(--grey1L), 0.1);
+        --c-overlay: hsla(var(--greyH), var(--greyS), var(--grey1L), 0.07);
+        --c-background: var(--c-grey8);
+        --c-body: var(--c-grey1);
+        --c-bodyDimmed: hsla(var(--greyH), var(--greyS), var(--grey1L), 0.5);
+        --c-fieldBorder: var(--c-grey6);
+        --c-buttonBg: var(--c-grey6);
+    }
+    
+    img {
+        filter: brightness(.8) contrast(1.2);
+    }
+}
+
+
+
 .active{
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.67);
     border-radius: 5px;
