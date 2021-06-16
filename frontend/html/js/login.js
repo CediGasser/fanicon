@@ -8,3 +8,9 @@ btnLogin.addEventListener('click', () => {
 
     login(name, password)
 })
+
+document.addEventListener('keydown', e => {
+    if (e.code == 'Enter'){
+        btnLogin.click()
+    }
+})

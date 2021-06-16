@@ -9,3 +9,9 @@ btnSignup.addEventListener('click', () => {
 
     register(name, email, password)
 })
+
+document.addEventListener('keydown', e => {
+    if (e.code == 'Enter'){
+        btnSignup.click()
+    }
+})
