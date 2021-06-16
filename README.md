@@ -223,3 +223,9 @@ If you are an Admin you are going to see this
 ![](dok/Admin.png) 
 If you want to add a Icon as an Admin
 ![](dok/Add_Icon.png)
+
+Wir haben bei den Wireframes alles so umgesetzt, bis auf die Suchfunktion welche wir aus der Designoverview Seite geschtrichen haben, da diese dort nicht relevant war.
+Zudem haben wir bei der Index Seite noch unserem Sponsor gedankt und noch Details zu unserer Webseite aufgelistet und wir haben bei der Admin seite die Icons nicht anzeigen lassen, da dies unserer Meinung nach nur unnötig Platz braucht.
+
+# Designentscheidung
+
