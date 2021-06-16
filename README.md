@@ -157,13 +157,10 @@ Folgende Technologien verwenden wir, welche für uns grösstenteils neu sind:
 - Fanicon Backend
   - Java
   - Spring
-  - DB Migrationsscripts
-  - Sessions
+  - Flyway
 - Postgres DB
-- Caching (Redis)
 - Fanicon Frontend
   - nginx webserver
-  - React
   - JavaScript
   - HTML &amp; CSS (Bootstrap)
 
