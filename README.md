@@ -170,6 +170,7 @@ Folgende Technologien verwenden wir, welche für uns grösstenteils neu sind:
 # ERD
 
 ![](dok/erd.png)
+Hier ist bei der Design tabelle eine icon_Color spalte vom Typ VARCHAR(255) hinzu gekommen.
 
 # Wireframe
 
