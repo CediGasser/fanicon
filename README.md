@@ -42,6 +42,8 @@ Klasse S-Inf18aL
 
 Wir erstellen im M151 das Backend und im M152 das Frontend, was zusammen eine Webapp ergibt. Auf dieser Webapp soll man Icons auf einer Fläche anordnen, um sein eigenes Design zu kreieren. Die Webseite hat ein Login und eine Registrierungsfunktion.
 
+Unsere: [Präsentation](dok/Fanicon.pdf)
+
 # API
 
 These are the endpoints used by our Frontend. There are a few more implemented in the Backend.
