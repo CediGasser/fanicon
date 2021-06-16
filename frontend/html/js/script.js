@@ -81,7 +81,7 @@ export async function upgradeToVip(){
     const response = await fetch('api/auth/upgrade', {method: 'PUT'})
 
     if (response.status == 200){
-        location.href = "/home.html"
+        location.href = "/index.html"
     }
 }
 
