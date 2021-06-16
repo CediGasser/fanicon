@@ -229,3 +229,8 @@ Zudem haben wir bei der Index Seite noch unserem Sponsor gedankt und noch Detail
 
 # Designentscheidung
 
+Bei dem Design wollten wir ein Zeitneutrales und schlichtes aber doch modernes Design haben. Deshalb haben wir Grau und Weiss verwendet. 
+Als ausnahme, haben wir bei dem "Buy" Button von der VIP.html Seite diesen Button gelb gemacht, damit es anregt VIP zu kaufen und man eher darauf klickt als auf den Cancel Button.
+Zudem haben wir auch darauf geachtet, dass alle Seiten einander ähnlich aussehen.
+Die Button platzierung sowie die platzierung der Navbar haben wir nach dem Prinzip des Standarts, wie bei anderen Webseiten gestaltet.
+Da wir Personas in der Altersgruppe 10 - 45 Jahren haben, entschieden wir uns das Design einfach zu machen. Dass heisst, dass wir keine Animationen wollten, sowie auch dass die Buttons an dem Ort sind, an dem sie normalerweise auch sind (also wie bei bekannten Webseiten). Da wir ein Seriöses Geschäft darstellen wollen, wollten wir auch keine zu aufdringlichen Farben und wollten deshalb Farben welche man in der Heutigen Zeit auf fast allen Webseiten sieht, also Weiss und Grau.
