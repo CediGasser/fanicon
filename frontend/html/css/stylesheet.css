@@ -1,5 +1,5 @@
 :root{
-    /*design base: https://hihayk.github.io/shaper/#Nunito,%20sans-serif/1.4/1/2.98/0.8/2/0.5/314/100/46/20/0.5/2/false */
+    /*design base: https://hihayk.github.io/shaper/#Nunito,%20sans-serif/1.4/1/2.98/0.8/2/0.5/314/100/46/5/0.5/2/false  */
 
 
     /* Typography */
@@ -16,7 +16,7 @@
     --lineHeightRelativeAmount: 1.1em;
     --globalLineHeight: calc(var(--lineHeightFixedAmount) + var(--lineHeightRelativeAmount));
 
-    --fontFamily: Nunito, sans-serif;
+    --fontFamily: Nunito, Roboto, system-ui, sans-serif;
 
 
     /* Spacing */
@@ -80,8 +80,11 @@
     /* Layer */
     --radius: 0.5rem;
 
-    --fieldBorderWidth: 2px;
+    --fieldBorderWidth: 1px;
+
+    --box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.67);
 }
+
 
 @media (prefers-color-scheme: dark) {
     
@@ -100,39 +103,195 @@
     }
 }
 
+/* general */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--fontFamily);
+}
 
-
-.active{
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.67);
-    border-radius: 5px;
+body{
+    background: var(--c-background);
+    line-height: var(--globalLineHeight);
+    color: var(--c-body);
 }
 
 .spacer{
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-xl);
     height: 0;
     width: 100%;
-    border-top: 1px solid #444;
+    border-color: var(--c-border);
+    border-top-width: var(--fieldBorderWidth);
+    border-top-style: solid;
+}
+
+.overlay{
+    background-color: var(--c-overlay);
+    border-radius: var(--radius);
+    box-shadow: var(--box-shadow);
 }
 
 .cardStyle{
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.67);
-    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.67);
-    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.67);
-    border-radius: 10px;
-    padding: 10px;
-    margin: 20px;
+    box-shadow: var(--box-shadow);
+    -webkit-box-shadow: var(--box-shadow);
+    -moz-box-shadow: var(--box-shadow);
+    border-radius: var(--radius);
+    margin: var(--space-m);
+}
+
+.button{
+    padding: var(--textFrameY) var(--textFrameX);
+    border: none;
+    background-color: var(--c-buttonBg);
+    border-radius: var(--radius);
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--c-body);
+    letter-spacing: .03em;
+    transition: -webkit-filter .2s;
+    transition: filter .2s;
+    transition: filter .2s,-webkit-filter .2s;
+    margin: var(--space-l);
+}
+
+.button:hover{
+    filter: brightness(1.1);
+    color: var(--c-body);
+}
+
+.button-accent{
+    background-color: var(--c-accent);
+    color: var(--c-accentContrasted);
+}
+
+.nolink{
+    text-decoration: none;
 }
 
 .logoutBtn{
     position: absolute;
-    right: 10px;
-    border-radius: 5px;
-    background-color: rgb(223, 223, 223);
+    right: var(--space-m);
+}
+
+.navbar{
+    background-color: var();
+}
+
+.nav-item.active{
+    border-color: var(--c-accent);
+}
+
+.nav-item {
+    font-size: var(--text-m);
+    border-bottom: 2px solid transparent;
+    padding-bottom: .2em;
+}
+
+.nav-item a {
+    color: var(--c-body);
 }
 
 .navLogo{
-    margin-right: 20px;
+    margin-right: var(--space-l);
+}
+
+.width100{
+    width: 100%;
+}
+
+.text-input{
+    padding: calc(var(--textFrameY) - var(--fieldBorderWidth)) var(--textFrameY);
+    color: inherit;
+    border: var(--fieldBorderWidth) solid var(--c-fieldBorder);
+    border-radius: var(--radius);
+    width: 100%;
+    background-color: transparent;
+}
+
+input:-webkit-autofill { 
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+
+/* Editor */
+.design-Container{
+    border-radius: var(--radius);
+    padding: var(--space-m);
+}
+#icons-add-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+}
+.iconCard svg {
+    width: 80%;
+    margin: 1rem;
+}
+.iconCard svg g{
+    fill: var(--c-body);
+}
+
+.optionsPanel{
+    margin: 10px;
+    float: left;
+    display: inline;
+}
+
+#txtSearchIcon{
+    width: 32rem;
+}
+
+.editor{
+    overflow: hidden;
+}
+summary{
+    outline: none;
+}
+.optionSection{
+    width: 17rem;
+    height: fit-content;
+    padding: var(--space-m);
+}
+.iconCard{
+    width: 14rem; 
+    height: 18rem;
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    transition: ease-in-out;
+}
+.iconCard:hover{
+    transform: translateY(-1px) scale(1.005) translateZ(0);
+    transition: 100ms ease-in-out;
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.57);
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.57);
+}
+
+@media screen and (max-width: 1890px) {
+    .optionsPanel{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+
+/* Home & Designoverview */
+.buyVipDiv{
+    margin: auto;
+    width: 400px;
+    height: 200px;
+}
+
+.buyVipDiv a{
+    margin-top: 20px;
 }
 
 .designCard{
@@ -144,15 +303,12 @@
     height: 80px;
 }
 
+
 .iconsInDesign{
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: 40px;
-}
-
-.nolink{
-    text-decoration: none;
 }
 
 .designCardContainer{
@@ -162,4 +318,10 @@
     justify-content: space-around;
     width: 100%;
     align-items: center;
+}
+
+
+/* Admin */
+.table{
+    color: var(--c-body);
 }

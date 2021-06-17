@@ -11,7 +11,7 @@ btnSearchIcon.addEventListener('click', async () => {
 
     icons.forEach(icon => {
         str += `
-        <div class="card cardStyle iconCard text-center" data-id="${icon.id}">
+        <div class="card cardStyle iconCard text-center overlay" data-id="${icon.id}">
             ${icon.svg}
             <h5 class="card-title">${icon.name}</h5>
             <h6 class="card-subtitle mb-2 text-muted">${icon.theme.name}</h6>

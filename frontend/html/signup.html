@@ -4,53 +4,21 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="./css/stylesheet.css" rel="stylesheet">
     
     <title>Fanicon</title>
-    <style>
-      *{
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
-      body{
-        background: gray;
-      }
-      .row{
-        background:white;
-        border-radius: 30px;
-      }
-      img{
-        border-top-left-radius: 30px;
-        border-bottom-left-radius: 30px;
-      }
-      .btn1{
-        border: white;
-        outline: none;
-        height: 50px;
-        width: 100%;
-        background-color: black;
-        color: white;
-        border-radius: 4px;
-        font-weight: bold;
-      }
-      .btn1:hover{
-        background: white;
-        border: 1px solid;
-        color: black;
-      }
-    </style>
   </head>
   <body>
     
     <section class="Form my-4 mx-5">
       <div class="container">
-        <div class="row no-gutters">
+        <div class="row no-gutters overlay">
           <div class="col-lg-5">
-            <img src="assets/logo_round.svg" class="img-fluid" alt="">
+            <img src="assets/logo_round.svg" class="img-fluid width100" alt="">
           </div>
           <div class="col-lg-7 px-5 pt-5">
             <h1 class="font-weight-bold py-3">Fanicon</h1>
@@ -58,27 +26,27 @@
             <form>
               <div class="form-row">
                 <div class="col-lg-7">
-                  <input type="text" placeholder="Displayname" class="form-control my-3 p-4" id="name" required>
+                  <input type="text" placeholder="Displayname" class="text-input width100 my-3 p-4" id="name" required>
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-lg-7">
-                  <input type="email" placeholder="Email-Address" class="form-control my-3 p-4" id="email" required>
+                  <input type="email" placeholder="Email-Address" class="text-input width100 my-3 p-4" id="email" required>
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-lg-7">
-                  <input type="password" placeholder="Password" class="form-control my-3 p-4" id="password" required>
+                  <input type="password" placeholder="Password" class="text-input width100 my-3 p-4" id="password" required>
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-lg-7">
-                  <button type="button" class="btn1 mt-1 mb-2" id="btnSignup">Sign Up</button>
+                  <button type="button" class="btn button button-accent width100 mt-1 mb-2" id="btnSignup">Sign Up</button>
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-lg-7">
-                  <a type="button" class="btn btn1 mt-1 mb-2" href="./index.html">Cancel</a>
+                  <a type="button" class="btn button width100 mt-1 mb-2" href="./index.html">Cancel</a>
                 </div>
               </div>
               

@@ -4,10 +4,12 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="./css/stylesheet.css" rel="stylesheet">
+    <link href="./css/slider.css" rel="stylesheet">
 
     <title>Fanicon</title>
     <style id="styles">
@@ -19,71 +21,7 @@
         height: 100px;
         width: 100px;
       }
-      *{
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
-      body{
-        background: white;
-      }
-      .row{
-        background:white;
-        border-radius: 30px;
-      }
-      img{
-        border-top-left-radius: 30px;
-        border-bottom-left-radius: 30px;
-      }
-      .btn1{
-        border: white;
-        outline: none;
-        height: 40px;
-        width: 100%;
-        background-color: black;
-        color: white;
-        border-radius: 4px;
-        font-weight: bold;
-        margin-bottom: 7px;
-        margin-top: 4px;
-      }
-      .btn1:hover{
-        background: white;
-        border: 1px solid;
-        color: black;
-      }
-      .textinput{
-        margin-bottom: 5px;
-      }
-      .iconCard{
-        width: 14rem; 
-        height: 18rem;
-        margin: 2rem;
-        display: flex;
-        align-items: center;
-        transition: ease-in-out;
-      }
-      .iconCard:hover{
-        transform: translateY(-1px) scale(1.005) translateZ(0);
-        transition: 100ms ease-in-out;
-        box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.57);
-        -webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.57);
-        -moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.57);
-      }
-
-      #icons-add-container{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        width: 100%;
-        align-items: center;
-      }
-      .iconCard svg {
-        width: 80%;
-        margin: 1rem;
-      }
-      .design-container{
+      #designContainer{
         max-width: 1440px;
         height: 810px; 
         width: 100%;
@@ -101,41 +39,12 @@
         align-content: center;
         overflow: hidden;
       }
-      .optionsPanel{
-        margin: 10px;
-        float: left;
-        display: inline;
-      }
-      
-      #txtSearchIcon{
-        width: 32rem;
-      }
-      
-      .editor{
-        overflow: hidden;
-      }
-      summary{
-        outline: none;
-      }
-      .optionSection{
-        width: 17rem;
-        height: fit-content;
-      }
-
-      @media screen and (max-width: 1890px) {
-        .optionsPanel{
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-        }
-      }
-      
     </style>
   </head>
   <body>
     
     <section class="Form my-4 mx-5">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg overlay">
         <div class="col-lg-1">
           <a href="./index.html"><img src="assets/logo_round.svg" class="img-fluid navLogo" alt="Fanicon flame logo"></a>
         </div>
@@ -174,7 +83,7 @@
             </li>`, 'adminNavLink')
             </script>
 
-            <li class="nav-item logoutBtn">
+            <li class="nav-item logoutBtn ">
               <a class="nav-link" href="./index.html">Logout <span class="sr-only"></span></a>
             </li>
           </ul>
@@ -185,19 +94,19 @@
           <div class="editor">
             <div class="design-container" id="designContainer"></div>
             <div class="optionsPanel">
-              <details class="cardStyle optionSection">
+              <details class="cardStyle optionSection overlay">
                 <summary>Instructions</summary><br>
                 <p>Scroll down to search for icons and add them by clicking on them.</p>
                 <p>In the design, click on an icon to delete it.</p>
               </details>
-              <details class="cardStyle optionSection">
+              <details class="cardStyle optionSection overlay">
                 <summary>Color settings</summary><br>
                 <label>Background</label><br>
                 <input type="color" id="inputBgColor" value="#FFFFFF"/><br>
                 <label>Icons</label><br>
                 <input type="color" id="inputIconColor"/>
               </details>
-              <details class="cardStyle optionSection">
+              <details class="cardStyle optionSection overlay">
                 <summary>Size settings</summary><br>
                 <label>Icon Size</label><br>
                 <input type="range" id="inputIconSize" min="20" max="260" value="100"/><br>
@@ -216,11 +125,13 @@
                 const urlParams = new URLSearchParams(queryString);
                 const designId = urlParams.get('id')
 
-                isUserGroupThenWriteAtId('VIP', `<div class="cardStyle optionSection">
+                const element = `<div class="cardStyle optionSection overlay">
                   <p>Choose the same name as another one of your designs to overwrite it.</p>
-                  <input class="textinput form-control mr-sm-2" type="text" placeholder="Designname" id="txtDesignName" aria-label="Designname">
-                  <button class="btn1" id="btnSaveDesign">Save</button>
-                </div>`, 'saveControl').then(() => {
+                  <input class="text-input mr-sm-2" type="text" placeholder="Designname" id="txtDesignName" aria-label="Designname">
+                  <button class="btn button button-accent" id="btnSaveDesign">Save</button>
+                </div>`
+
+                isUserGroupThenWriteAtId('VIP', element, 'saveControl').then(() => {
                     let btn = document.getElementById('btnSaveDesign')
                     if (btn) {
                       btn.addEventListener('click', onPostDesign)
@@ -233,11 +144,7 @@
                   })
                 
                 
-                isUserGroupThenWriteAtId('ADMIN', `<div class="cardStyle optionSection">
-                  <p>Choose the same name as another one of your designs to overwrite it.</p>
-                  <input class="textinput form-control mr-sm-2" type="text" placeholder="Designname" id="txtDesignName" aria-label="Designname">
-                  <button class="btn1" id="btnSaveDesign">Save</button>
-                </div>`, 'saveControl').then(() => {
+                isUserGroupThenWriteAtId('ADMIN', element, 'saveControl').then(() => {
                     let btn = document.getElementById('btnSaveDesign')
                     if (btn) {
                       btn.addEventListener('click', onPostDesign)
@@ -256,8 +163,8 @@
           </div>
           <div class="spacer"></div>
           <div class="form-inline my-2 my-lg-0">
-            <input class="textinput form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="txtSearchIcon" style="float: left;">
-            <button class="btn btn-outline-success my-2 my-sm-0" id="btnSearchIcon" style="float: left; margin: 10px;">Search</button>
+            <input class="text-input mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="txtSearchIcon" style="float: left;">
+            <button class="btn button button-accent my-2 my-sm-0" id="btnSearchIcon" style="float: left; margin: 10px;">Search</button>
           </div>
           <div id="icons-add-container"></div>
         </main>

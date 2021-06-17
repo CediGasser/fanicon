@@ -4,6 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -11,51 +12,13 @@
     
     <title>Fanicon</title>
     <style id="styles">
-      *{
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
-      body{
-        background: white;
-      }
-      .row{
-        background:white;
-        border-radius: 30px;
-      }
-      img{
-        border-top-left-radius: 30px;
-        border-bottom-left-radius: 30px;
-      }
-      .btn1{
-        border: white;
-        outline: none;
-        height: 50px;
-        width: 100%;
-        background-color: black;
-        color: white;
-        border-radius: 4px;
-        font-weight: bold;
-      }
-      .btn1:hover{
-        background: white;
-        border: 1px solid;
-        color: black;
-      }
-      .buyVipDiv{
-        margin: auto;
-        width: 400px;
-        height: 200px;
-      }
-      .buyVipDiv a{
-        margin-top: 20px;
-      }
+      
     </style>
   </head>
   <body>
     
     <section class="Form my-4 mx-5">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg overlay">
         <div class="col-lg-1">
           <a href="./index.html"><img src="assets/logo_round.svg" class="img-fluid navLogo" alt="Fanicon flame logo"></a>
         </div>
@@ -111,11 +74,11 @@
       <script type="module" async>
         import { isUserGroupThenWriteAtId } from './js/helper.js';
 
-        isUserGroupThenWriteAtId('NORMAL', `<div class="align-middle buyVipDiv cardStyle text-center card">
+        isUserGroupThenWriteAtId('NORMAL', `<div class="align-middle buyVipDiv cardStyle text-center card overlay">
         <h5 class="card-title" >Seems like you are still not VIP</h5>
         <h6 class="card-subtitle mb-2 text-muted" >Buy VIP now to be able to save your designs!</h6>
         <h6 class="card-subtitle mb-2 text-muted" >Once you saved some designs as VIP, they will be displayed here.</h6>
-        <a class="btn btn-primary" href="vip.html">Upgrade to VIP</a>
+        <a class="btn button button-accent" href="vip.html">Upgrade to VIP</a>
       </div>`, 'buyVipComesHere')
       </script>
       
