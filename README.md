@@ -40,6 +40,15 @@ Klasse S-Inf18aL
   * `docker-compose up -d` ausführen
   * [localhost](http://localhost) öffnen
 
+Folgende User wurden stehen zum Testen zur Verfügung:
+
+Name | Passwort | Gruppe
+-----|----------|--------
+Fanicon|secret|ADMIN
+admin|secret|ADMIN
+testli|secret|NORMAL
+vip testli|secret|VIP
+
 # Beschreibung
 
 Wir erstellen im M151 das Backend und im M152 das Frontend, was zusammen eine Webapp ergibt. Auf dieser Webapp soll man Icons auf einer Fläche anordnen, um sein eigenes Design zu kreieren. Die Webseite hat ein Login und eine Registrierungsfunktion.
