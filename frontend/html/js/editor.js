@@ -23,7 +23,7 @@ btnSearchIcon.addEventListener('click', async () => {
 
     iconCardsContainer.innerHTML = str
 
-    let iconCards = iconCardsContainer.querySelectorAll('div[class="card cardStyle iconCard text-center"]');
+    let iconCards = iconCardsContainer.childNodes
     iconCards.forEach(card => {
         card.addEventListener ('click', addToDesign);
     });
