@@ -39,7 +39,7 @@ export async function login(name, password){
     if (response.status == 200){
         location.href = "/home.html"
     } else {
-        fail('Login failed')
+        fail('Login failed, check Username and Password')
     }
 }
 
@@ -58,6 +58,8 @@ export async function register(name, email, password){
     
     if (response.status == 200){
         login(name, password)
+    } else {
+        fail('Creating User failed')
     }
 }
 

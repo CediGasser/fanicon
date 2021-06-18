@@ -13,8 +13,8 @@ btnSearchIcon.addEventListener('click', async () => {
         str += `
         <div class="card cardStyle iconCard text-center overlay" data-id="${icon.id}">
             ${icon.svg}
-            <h5 class="card-title">${icon.name}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">${icon.theme.name}</h6>
+            <p class="card-title tm">${icon.name}</p>
+            <p class="card-subtitle ts mb-2 text-muted">${icon.theme.name}</p>
         </div>`
     })
 

@@ -6,7 +6,7 @@
     --baseTextSize: 1rem;
     --textSizeIncrement: 1.4;
 
-    --text-xs: calc(var(--baseTextSize) / var(--textSizeIncrement));
+    --text-xs: calc(var(--baseTextSize) / var(--textSizeIncrement)) ;
     --text-s: var(--baseTextSize);
     --text-m: calc(var(--text-s) * var(--textSizeIncrement));
     --text-l: calc(var(--text-m) * var(--textSizeIncrement));
@@ -117,6 +117,13 @@ body{
     color: var(--c-body);
 }
 
+.ts{
+    font-size: var(--text-s);
+}
+.tm{
+    font-size: var(--text-m);
+}
+
 .spacer{
     margin-top: var(--space-xl);
     margin-bottom: var(--space-xl);
@@ -163,7 +170,7 @@ body{
 
 .button-accent{
     background-color: var(--c-accent);
-    color: var(--c-accentContrasted);
+    color: var(--c-body);
 }
 
 .nolink{
@@ -208,6 +215,7 @@ body{
     border-radius: var(--radius);
     width: 100%;
     background-color: transparent;
+    margin-bottom: var(--space-m);
 }
 
 input:-webkit-autofill { 

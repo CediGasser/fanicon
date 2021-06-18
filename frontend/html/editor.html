@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="dark light">
+    <meta name="description" content="Fanicon - Create Designs from your favourite movies, series, games or anything else.">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -63,7 +64,7 @@
             <li class="nav-item">
               <a class="nav-link" href="./designs.html">Designoverview <span class="sr-only"></span></a>
             </li>
-            <div id="vipNavLink"></div>
+            <li id="vipNavLink"></li>
 
             <script type="module">
               import { isUserGroupThenWriteAtId } from './js/helper.js';
@@ -73,7 +74,7 @@
             </li>`, 'vipNavLink')
             </script>
 
-            <div id="adminNavLink"></div>
+            <li id="adminNavLink"></li>
 
             <script type="module">
               import { isUserGroupThenWriteAtId } from './js/helper.js';
@@ -90,84 +91,87 @@
         </div>
       </nav>
       <h1 class="font-weight-bold py-3">Editor</h1>
-        <main>
-          <div class="editor">
-            <div class="design-container" id="designContainer"></div>
-            <div class="optionsPanel">
-              <details class="cardStyle optionSection overlay">
-                <summary>Instructions</summary><br>
-                <p>Scroll down to search for icons and add them by clicking on them.</p>
-                <p>In the design, click on an icon to delete it.</p>
-              </details>
-              <details class="cardStyle optionSection overlay">
-                <summary>Color settings</summary><br>
-                <label>Background</label><br>
-                <input type="color" id="inputBgColor" value="#FFFFFF"/><br>
-                <label>Icons</label><br>
-                <input type="color" id="inputIconColor"/>
-              </details>
-              <details class="cardStyle optionSection overlay">
-                <summary>Size settings</summary><br>
-                <label>Icon Size</label><br>
-                <input type="range" id="inputIconSize" min="20" max="260" value="100"/><br>
-                <label>Spacing</label><br>
-                <input type="range" id="inputIconMargin" min="0" max="100" value="10"/>
-              </details>
+      <div class="editor">
+        <div class="design-container" id="designContainer"></div>
+        <div class="optionsPanel">
+          <details class="cardStyle optionSection overlay">
+            <summary>Instructions</summary><br>
+            <p>Scroll down to search for icons and add them by clicking on them.</p>
+            <p>In the design, click on an icon to delete it.</p>
+          </details>
+          <details class="cardStyle optionSection overlay">
+            <summary>Color settings</summary><br>
+            <label for="inputBgColor">Background</label><br>
+            <input type="color" id="inputBgColor" value="#FFFFFF"/><br>
+            <label for="inputIconColor">Icons</label><br>
+            <input type="color" id="inputIconColor"/>
+          </details>
+          <details class="cardStyle optionSection overlay">
+            <summary>Size settings</summary><br>
+            <label for="inputIconSize">Icon Size</label><br>
+            <input type="range" id="inputIconSize" min="20" max="260" value="100"/><br>
+            <label for="inputIconMargin">Spacing</label><br>
+            <input type="range" id="inputIconMargin" min="0" max="100" value="10"/>
+          </details>
 
-              <div id="saveControl"></div>
+          <div id="saveControl"></div>
 
-              <script type="module">
-                import { isUserGroupThenWriteAtId } from './js/helper.js';
-                import { onPostDesign } from './js/editor.js';
-                import { getDesign } from './js/script.js';
+          <script type="module">
+            import { isUserGroupThenWriteAtId } from './js/helper.js';
+            import { onPostDesign } from './js/editor.js';
+            import { getDesign } from './js/script.js';
 
-                const queryString = window.location.search;
-                const urlParams = new URLSearchParams(queryString);
-                const designId = urlParams.get('id')
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const designId = urlParams.get('id')
 
-                const element = `<div class="cardStyle optionSection overlay">
-                  <p>Choose the same name as another one of your designs to overwrite it.</p>
-                  <input class="text-input mr-sm-2" type="text" placeholder="Designname" id="txtDesignName" aria-label="Designname">
-                  <button class="btn button button-accent" id="btnSaveDesign">Save</button>
-                </div>`
+            const element = `<div class="cardStyle optionSection overlay">
+              <p>Choose the same name as another one of your designs to overwrite it.</p>
+              <input class="text-input mr-sm-2" type="text" placeholder="Designname" id="txtDesignName" aria-label="Designname">
+              <button class="btn button button-accent" id="btnSaveDesign">Save</button>
+            </div>`
 
-                isUserGroupThenWriteAtId('VIP', element, 'saveControl').then(() => {
-                    let btn = document.getElementById('btnSaveDesign')
-                    if (btn) {
-                      btn.addEventListener('click', onPostDesign)
-                      if (designId){
-                        getDesign(designId).then(design => {
-                          document.getElementById('txtDesignName').value = design.name
-                        })
-                      }
-                    }
-                  })
-                
-                
-                isUserGroupThenWriteAtId('ADMIN', element, 'saveControl').then(() => {
-                    let btn = document.getElementById('btnSaveDesign')
-                    if (btn) {
-                      btn.addEventListener('click', onPostDesign)
-                      if (designId){
-                        getDesign(designId).then(design => {
-                          document.getElementById('txtDesignName').value = design.name
-                        })
-                      }
-                    }
-                  })
+            isUserGroupThenWriteAtId('VIP', element, 'saveControl').then(() => {
+                let btn = document.getElementById('btnSaveDesign')
+                if (btn) {
+                  btn.addEventListener('click', onPostDesign)
+                  if (designId){
+                    getDesign(designId).then(design => {
+                      document.getElementById('txtDesignName').value = design.name
+                    })
+                  }
+                }
+              })
+            
+            
+            isUserGroupThenWriteAtId('ADMIN', element, 'saveControl').then(() => {
+                let btn = document.getElementById('btnSaveDesign')
+                if (btn) {
+                  btn.addEventListener('click', onPostDesign)
+                  if (designId){
+                    getDesign(designId).then(design => {
+                      document.getElementById('txtDesignName').value = design.name
+                    })
+                  }
+                }
+              })
 
-                
-              </script>
-              
-            </div>
+            
+          </script>
+          
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <div class="form-row my-2 my-lg-0">
+        <div class="form-row input-group mb-3">
+          <div class="col-lg-7 input-group-prepend">
+            <label for="txtSearchIcon">Search for Icons:</label>
+            <input class="text-input mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="txtSearchIcon">
           </div>
-          <div class="spacer"></div>
-          <div class="form-inline my-2 my-lg-0">
-            <input class="text-input mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="txtSearchIcon" style="float: left;">
-            <button class="btn button button-accent my-2 my-sm-0" id="btnSearchIcon" style="float: left; margin: 10px;">Search</button>
-          </div>
-          <div id="icons-add-container"></div>
-        </main>
+        </div>
+        <button class="btn button button-accent my-2 my-sm-0" id="btnSearchIcon">Search</button>
+      </div>
+      <div id="icons-add-container"></div>
 
         
     </section>

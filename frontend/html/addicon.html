@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="dark light">
+    <meta name="description" content="Fanicon - Create Designs from your favourite movies, series, games or anything else.">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -24,22 +25,26 @@
           <form>
             <div class="form-row">
               <div class="col-lg-7">
+                <label for="name">Name</label>
                 <input type="text" placeholder="Name" class="text-input my-3 p-4" id="name">
               </div>
             </div>
             <div class="form-row">
               <div class="col-lg-7">
+                <label for="theme">Theme ID</label>
                 <input type="text" placeholder="Theme" class="text-input my-3 p-4" id="theme">
               </div>
             </div>
             <div class="form-row">
               <div class="col-lg-7">
-                <input type="text" placeholder="Style" class="text-input my-3 p-4" id="style">
+                <label for="style">Style</label>
+                <input type="text" placeholder="Style (e.g. Outline or Filled)" class="text-input my-3 p-4" id="style">
               </div>
             </div>
             <div class="form-row">
               <div class="col-lg-7">
-                <textarea class="text-input" rows="10" id="svgcode" placeholder="<svg/>"></textarea>
+                <label for="svgcode">SVG Code</label>
+                <textarea class="text-input" rows="10" id="svgcode" placeholder="<svg class='icon'></svg>"></textarea>
               </div>
             </div>
             <div class="form-row">
