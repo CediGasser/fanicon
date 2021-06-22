@@ -15,6 +15,10 @@ Klasse S-Inf18aL
 
 [Beschreibung](#Beschreibung)
 
+[API](#API)
+
+[Designentscheidungen](#Designentscheidungen)
+
 [Nutzer](#Nutzer)
 
 [- Gruppen](#Gruppen)
@@ -34,10 +38,100 @@ Klasse S-Inf18aL
   * `Docker`, `Docker-Compose` und `Java 11` sind vorausgesetzt
   * `cd backend; ./gradlew bootJar` backend builden
   * `docker-compose up -d` ausführen
+  * [localhost](http://localhost) öffnen
+
+Folgende User wurden stehen zum Testen zur Verfügung:
+
+Name | Passwort | Gruppe
+-----|----------|--------
+Fanicon|secret|ADMIN
+admin|secret|ADMIN
+testli|secret|NORMAL
+vip testli|secret|VIP
 
 # Beschreibung
 
 Wir erstellen im M151 das Backend und im M152 das Frontend, was zusammen eine Webapp ergibt. Auf dieser Webapp soll man Icons auf einer Fläche anordnen, um sein eigenes Design zu kreieren. Die Webseite hat ein Login und eine Registrierungsfunktion.
+
+Unsere: [Präsentation](dok/Fanicon.pdf)
+
+# API
+
+These are the endpoints used by our Frontend. There are a few more implemented in the Backend.
+
+## Auth
+
+`POST` `/auth/login` send credentials and receive sessions cookie  
+`POST` `/auth/register` creates user  
+`PUT` `/auth/upgrade` upgrades current normal user to vip  
+`GET` `/auth/info` gets authentication info such as name or usergroup  
+
+## Icons
+
+`GET` `/icons` returns all Icons  
+`GET` `/icons?q=sword` returns all Icons with "sword" in the Name or in the Theme Name  
+`POST` `/icons` creates icon  
+
+## Users
+
+`GET` `/users` returns all users  
+
+## Designs
+
+`GET` `/designs` returns all designs  
+`GET` `/users/:name/designs` returns all designs from user :name  
+`GET` `/designs/:id` returns design by :id  
+`POST` `/designs` send design and it either creates a design or overwrites an existing design  
+
+# Designentscheidungen
+
+Bei dem Design wollten wir ein Zeitneutrales und schlichtes aber doch modernes Design haben. Deshalb haben wir nur eine Akzentfarbe verwendet.  
+![](dok/fanicon-color.png)  
+Um alle Seiten einheitlich zu gestalten, haben wir auf css Variabeln gesetzt. Jegliche Farben oder Masse basieren auf wenigen Variabeln die einfach geändert werden können.  
+Als Akzentfarbe haben wir das Pink von unserem Logo genommen. Damit in CSS dunklere oder hellere Varianten der Farben berechnet werden können, haben wir diverse Farben im HSL format hinterlegt.  
+```CSS
+--accentH: 314;
+--accentS: 100%;
+--accentL: 46%;
+--c-accent: hsl(var(--accentH), var(--accentS), var(--accentL));
+```
+Somit sind solche Sachen möglich:
+```CSS
+.nav-item.active{
+    border-color: var(--c-accent);
+}
+```
+Beim Design der Webseite haben wir [dieses Tool](https://hihayk.github.io/shaper) verwendet um die CSS Variabeln festzulegen.  
+Da wir nun CSS Variabeln verwendeten, konnten wir einfach einen Dark Mode mithilfe von media queries implementieren wie [hier](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/) beschrieben:
+```CSS
+@media (prefers-color-scheme: dark) {
+    
+    body{
+        --c-border: hsla(var(--greyH), var(--greyS), var(--grey1L), 0.1);
+        --c-overlay: hsla(var(--greyH), var(--greyS), var(--grey1L), 0.07);
+        --c-background: var(--c-grey8);
+        --c-body: var(--c-grey1);
+        --c-bodyDimmed: hsla(var(--greyH), var(--greyS), var(--grey1L), 0.5);
+        --c-fieldBorder: var(--c-grey6);
+        --c-buttonBg: var(--c-grey6);
+    }
+}
+```
+Bilder sollen im Dark Mode etwas gedimmter dargestellt werden. Das wird hiermit in der media query erreicht:
+```CSS
+img {
+    filter: brightness(.8) contrast(1.2);
+}
+```
+
+Im Editor sind verwandte Einstellungen beispielsweise in einem `<details>`. So kann Zusammengehörigkeit aufgezeigt werden.
+
+Auch im Editor oder auf der Admin Seite zu sehen ist ein spacer der den oberen Teil vom unteren Teil trennt. So haben wir Elemente visuell voneinander getrennt.
+
+Beim Platzieren der Buttons sowie beim Platzieren der Navbar haben wir nach dem Prinzip des Standarts gearbeitet. Die Bedienung unserer Seite soll also wie bei anderen Webseiten gestaltet sein und so eine gute User Experience bieten.  
+Da wir Personas in der Altersgruppe 10 - 45 Jahren haben, entschieden wir uns das Design modern aber einfach zu machen. Dass heisst, dass wir keine Animationen wollten, sowie auch, dass die Buttons an dem Ort sind, an dem sie normalerweise auch sind (also wie bei bekannten Webseiten). Da wir ein Seriöses Geschäft darstellen wollen, wollten wir auch keine zu aufdringlichen Farben und wollten deshalb Farben welche man in der Heutigen Zeit auf fast allen Webseiten sieht, also Weiss und Grau und eine Akzentfarbe.
+
+Bei unserer Webseite ist nur die Landingpage voll responsive. Dies haben wir so gemacht, da es so gedacht ist, dass man die Webseite über den PC braucht. Trotzdem ist die Webseite teilweise responsive aufgrund von Bootsrap.
 
 # Nutzer
 
@@ -157,13 +251,10 @@ Folgende Technologien verwenden wir, welche für uns grösstenteils neu sind:
 - Fanicon Backend
   - Java
   - Spring
-  - DB Migrationsscripts
-  - Sessions
+  - Flyway
 - Postgres DB
-- Caching (Redis)
 - Fanicon Frontend
   - nginx webserver
-  - React
   - JavaScript
   - HTML &amp; CSS (Bootstrap)
 
@@ -172,6 +263,7 @@ Folgende Technologien verwenden wir, welche für uns grösstenteils neu sind:
 # ERD
 
 ![](dok/erd.png)
+Hier ist bei der Design tabelle eine icon_Color spalte vom Typ VARCHAR(255) hinzu gekommen.
 
 # Wireframe
 
@@ -192,3 +284,6 @@ If you are an Admin you are going to see this
 ![](dok/Admin.png) 
 If you want to add a Icon as an Admin
 ![](dok/Add_Icon.png)
+
+Wir haben bei den Wireframes alles so umgesetzt, bis auf die Suchfunktion welche wir aus der Designoverview Seite geschtrichen haben, da diese dort nicht relevant war.
+Zudem haben wir bei der Index Seite noch unserem Sponsor gedankt und noch Details zu unserer Webseite aufgelistet und wir haben bei der Admin seite die Icons nicht anzeigen lassen, da dies unserer Meinung nach nur unnötig Platz braucht.

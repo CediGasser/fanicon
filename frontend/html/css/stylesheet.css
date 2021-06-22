@@ -1,34 +1,305 @@
-.active{
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.67);
-    border-radius: 5px;
+:root{
+    /*design base: https://hihayk.github.io/shaper/#Nunito,%20sans-serif/1.4/1/2.98/0.8/2/0.5/314/100/46/5/0.5/2/false  */
+
+
+    /* Typography */
+    --baseTextSize: 1rem;
+    --textSizeIncrement: 1.4;
+
+    --text-xs: calc(var(--baseTextSize) / var(--textSizeIncrement)) ;
+    --text-s: var(--baseTextSize);
+    --text-m: calc(var(--text-s) * var(--textSizeIncrement));
+    --text-l: calc(var(--text-m) * var(--textSizeIncrement));
+    --text-xl: calc(var(--text-l) * var(--textSizeIncrement));
+
+    --lineHeightFixedAmount: 0.35rem;
+    --lineHeightRelativeAmount: 1.1em;
+    --globalLineHeight: calc(var(--lineHeightFixedAmount) + var(--lineHeightRelativeAmount));
+
+    --fontFamily: Nunito, Roboto, system-ui, sans-serif;
+
+
+    /* Spacing */
+    --unit: 0.5rem;
+    --spaceIncrement: 2;
+
+    --space-s: var(--unit);
+    --space-m: calc(var(--space-s) * var(--spaceIncrement));
+    --space-l: calc(var(--space-m) * var(--spaceIncrement));
+    --space-xl: calc(var(--space-l) * var(--spaceIncrement));
+    --space-2xl: calc(var(--space-xl) * var(--spaceIncrement));
+    --space-3xl: calc(var(--space-2xl) * var(--spaceIncrement));
+    --space-4xl: calc(var(--space-3xl) * var(--spaceIncrement));
+
+
+    /* Text frame */
+    --textFrameRatio: 2.98;
+    --textFrameY: 0.8em;
+    --textFrameX: calc(var(--textFrameY) * var(--textFrameRatio));
+
+
+    /* Color */
+    --accentH: 314;
+    --accentS: 100%;
+    --accentL: 46%;
+    --c-accent: hsl(var(--accentH), var(--accentS), var(--accentL));
+    --c-accentContrasted: hsl(var(--accentH), var(--accentS), 95%);
+
+    --greyH: var(--accentH);
+    --greyS: 5%;
+    --initialGreyLightness: 93%;
+    --greyscaleLightnessIncrement: 11.3%;
+
+    --grey1L:  var(--initialGreyLightness);
+    --grey2L:  calc(var(--initialGreyLightness) - var(--greyscaleLightnessIncrement) * 1);
+    --grey3L:  calc(var(--initialGreyLightness) - var(--greyscaleLightnessIncrement) * 2);
+    --grey4L:  calc(var(--initialGreyLightness) - var(--greyscaleLightnessIncrement) * 3);
+    --grey5L:  calc(var(--initialGreyLightness) - var(--greyscaleLightnessIncrement) * 4);
+    --grey6L:  calc(var(--initialGreyLightness) - var(--greyscaleLightnessIncrement) * 5);
+    --grey7L:  calc(var(--initialGreyLightness) - var(--greyscaleLightnessIncrement) * 6);
+    --grey8L:  calc(var(--initialGreyLightness) - var(--greyscaleLightnessIncrement) * 7);
+
+    --c-grey1: hsl(var(--greyH), var(--greyS), var(--grey1L));
+    --c-grey2: hsl(var(--greyH), var(--greyS), var(--grey2L));
+    --c-grey3: hsl(var(--greyH), var(--greyS), var(--grey3L));
+    --c-grey4: hsl(var(--greyH), var(--greyS), var(--grey4L));
+    --c-grey5: hsl(var(--greyH), var(--greyS), var(--grey5L));
+    --c-grey6: hsl(var(--greyH), var(--greyS), var(--grey6L));
+    --c-grey7: hsl(var(--greyH), var(--greyS), var(--grey7L));
+    --c-grey8: hsl(var(--greyH), var(--greyS), var(--grey8L));
+
+    --c-border: hsla(var(--greyH), var(--greyS), var(--grey8L), 0.1);
+    --c-overlay: hsla(var(--greyH), var(--greyS), var(--grey8L), 0.07);
+    --c-background: white;
+    --c-body: var(--c-grey8);
+    --c-bodyDimmed: hsla(var(--greyH), var(--greyS), var(--grey8L), 0.5);
+    --c-fieldBorder: var(--c-grey2);
+    --c-buttonBg: var(--c-grey2);
+
+
+    /* Layer */
+    --radius: 0.5rem;
+
+    --fieldBorderWidth: 1px;
+
+    --box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.67);
+}
+
+
+@media (prefers-color-scheme: dark) {
+    
+    body{
+        --c-border: hsla(var(--greyH), var(--greyS), var(--grey1L), 0.1);
+        --c-overlay: hsla(var(--greyH), var(--greyS), var(--grey1L), 0.07);
+        --c-background: var(--c-grey8);
+        --c-body: var(--c-grey1);
+        --c-bodyDimmed: hsla(var(--greyH), var(--greyS), var(--grey1L), 0.5);
+        --c-fieldBorder: var(--c-grey6);
+        --c-buttonBg: var(--c-grey6);
+    }
+    
+    img {
+        filter: brightness(.8) contrast(1.2);
+    }
+}
+
+/* general */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--fontFamily);
+}
+
+body{
+    background: var(--c-background);
+    line-height: var(--globalLineHeight);
+    color: var(--c-body);
+}
+
+.ts{
+    font-size: var(--text-s);
+}
+.tm{
+    font-size: var(--text-m);
 }
 
 .spacer{
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-xl);
     height: 0;
     width: 100%;
-    border-top: 1px solid #444;
+    border-color: var(--c-border);
+    border-top-width: var(--fieldBorderWidth);
+    border-top-style: solid;
+}
+
+.overlay{
+    background-color: var(--c-overlay);
+    border-radius: var(--radius);
+    box-shadow: var(--box-shadow);
 }
 
 .cardStyle{
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.67);
-    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.67);
-    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.67);
-    border-radius: 10px;
-    padding: 10px;
-    margin: 20px;
+    box-shadow: var(--box-shadow);
+    -webkit-box-shadow: var(--box-shadow);
+    -moz-box-shadow: var(--box-shadow);
+    border-radius: var(--radius);
+    margin: var(--space-m);
+}
+
+.button{
+    padding: var(--textFrameY) var(--textFrameX);
+    border: none;
+    background-color: var(--c-buttonBg);
+    border-radius: var(--radius);
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--c-body);
+    letter-spacing: .03em;
+    transition: -webkit-filter .2s;
+    transition: filter .2s;
+    transition: filter .2s,-webkit-filter .2s;
+    margin: var(--space-l);
+}
+
+.button:hover{
+    filter: brightness(1.1);
+    color: var(--c-body);
+}
+
+.button-accent{
+    background-color: var(--c-accent);
+    color: var(--c-body);
+}
+
+.nolink{
+    text-decoration: none;
 }
 
 .logoutBtn{
     position: absolute;
-    right: 10px;
-    border-radius: 5px;
-    background-color: rgb(223, 223, 223);
+    right: var(--space-m);
+}
+
+.navbar{
+    background-color: var();
+}
+
+.nav-item.active{
+    border-color: var(--c-accent);
+}
+
+.nav-item {
+    font-size: var(--text-m);
+    border-bottom: 2px solid transparent;
+    padding-bottom: .2em;
+}
+
+.nav-item a {
+    color: var(--c-body);
 }
 
 .navLogo{
-    margin-right: 20px;
+    margin-right: var(--space-l);
+}
+
+.width100{
+    width: 100%;
+}
+
+.text-input{
+    padding: calc(var(--textFrameY) - var(--fieldBorderWidth)) var(--textFrameY);
+    color: inherit;
+    border: var(--fieldBorderWidth) solid var(--c-fieldBorder);
+    border-radius: var(--radius);
+    width: 100%;
+    background-color: transparent;
+    margin-bottom: var(--space-m);
+}
+
+input:-webkit-autofill { 
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+
+/* Editor */
+.design-Container{
+    border-radius: var(--radius);
+    padding: var(--space-m);
+}
+#icons-add-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+}
+.iconCard svg {
+    width: 80%;
+    margin: 1rem;
+}
+.iconCard svg g{
+    fill: var(--c-body);
+}
+
+.optionsPanel{
+    margin: 10px;
+    float: left;
+    display: inline;
+}
+
+#txtSearchIcon{
+    width: 32rem;
+}
+
+.editor{
+    overflow: hidden;
+}
+summary{
+    outline: none;
+}
+.optionSection{
+    width: 17rem;
+    height: fit-content;
+    padding: var(--space-m);
+}
+.iconCard{
+    width: 14rem; 
+    height: 18rem;
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    transition: ease-in-out;
+}
+.iconCard:hover{
+    transform: translateY(-1px) scale(1.005) translateZ(0);
+    transition: 100ms ease-in-out;
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.57);
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.57);
+}
+
+@media screen and (max-width: 1890px) {
+    .optionsPanel{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+
+/* Home & Designoverview */
+.buyVipDiv{
+    margin: auto;
+    width: 400px;
+    height: 200px;
+}
+
+.buyVipDiv a{
+    margin-top: 20px;
 }
 
 .designCard{
@@ -40,15 +311,12 @@
     height: 80px;
 }
 
+
 .iconsInDesign{
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: 40px;
-}
-
-.nolink{
-    text-decoration: none;
 }
 
 .designCardContainer{
@@ -58,4 +326,10 @@
     justify-content: space-around;
     width: 100%;
     align-items: center;
+}
+
+
+/* Admin */
+.table{
+    color: var(--c-body);
 }

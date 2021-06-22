@@ -1,3 +1,29 @@
+import { toast } from './toast.js';
+
+function fail(text){
+    const options = {
+        style: {
+            main: {
+                background: "#c00",
+                color: "#fff"
+            }
+        }
+    }
+    toast.toast(text, options);
+}
+
+function success(text){
+    const options = {
+        style: {
+            main: {
+                background: "#0c0",
+                color: "#fff"
+            }
+        }
+    }
+    toast.toast(text, options);
+}
+
 export async function login(name, password){
     const data = {
         'name': name,
@@ -12,6 +38,8 @@ export async function login(name, password){
     
     if (response.status == 200){
         location.href = "/home.html"
+    } else {
+        fail('Login failed, check Username and Password')
     }
 }
 
@@ -30,6 +58,8 @@ export async function register(name, email, password){
     
     if (response.status == 200){
         login(name, password)
+    } else {
+        fail('Creating User failed')
     }
 }
 
@@ -51,6 +81,9 @@ export async function addicon(name, theme, style, svgcode){
     
     if (response.status == 200){
         location.href = "/admin.html"
+        success('Icon added successfully')
+    } else {
+        fail('Icon could not be added')
     }
 }
 
@@ -60,6 +93,8 @@ export async function getusers(){
     if (response.status == 200){
         const users = await response.json()
         return users
+    } else {
+        fail('Could not get Users, maybe you are not ADMIN?')
     }
 }
 
@@ -74,6 +109,8 @@ export async function getIcons(q){
     if (response.status == 200){
         const icons = await response.json()
         return icons
+    } else {
+        fail('Could not get Icons')
     }
 }
 
@@ -82,6 +119,8 @@ export async function upgradeToVip(){
 
     if (response.status == 200){
         location.href = "/index.html"
+    } else {
+        fail('Could not upgrade you to VIP')
     }
 }
 
@@ -120,7 +159,9 @@ export async function postDesign(name, bgColor, iconSize, iconMargin, iconColor,
     })
     
     if (response.status == 200){
-        return response
+        success(`Design "${name}" has been saved`)
+    } else {
+        fail('Design could not be saved, are you perhaps a NORMAL user?')
     }
 }
 
@@ -135,6 +176,8 @@ export async function getDesigns(userName){
     if (response.status == 200){
         const designs = await response.json()
         return designs
+    } else {
+        fail('Could not get Designs')
     }
 }
 
@@ -144,5 +187,7 @@ export async function getDesign(id){
     if (response.status == 200){
         const design = await response.json()
         return design
+    } else {
+        fail(`Could not load Design with id: ${id}`)
     }
 }

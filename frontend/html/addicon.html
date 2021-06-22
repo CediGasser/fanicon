@@ -4,107 +4,56 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
+    <meta name="description" content="Fanicon - Create Designs from your favourite movies, series, games or anything else.">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="./css/stylesheet.css" rel="stylesheet">
     
     <title>Fanicon</title>
-    <style>
-      *{
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
-      body{
-        background: white;
-      }
-      .row{
-        background:white;
-        border-radius: 30px;
-      }
-      img{
-        border-top-left-radius: 30px;
-        border-bottom-left-radius: 30px;
-      }
-      .btn1{
-        border: white;
-        outline: none;
-        height: 50px;
-        width: 100%;
-        background-color: black;
-        color: white;
-        border-radius: 4px;
-        font-weight: bold;
-      }
-      .btn1:hover{
-        background: white;
-        border: 1px solid;
-        color: black;
-      }
-      .btn2{
-        border: black;
-        outline: none;
-        height: 50px;
-        width: 100%;
-        background-color: gray;
-        color: black;
-        border-radius: 4px;
-        font-weight: bold;
-      }
-      .btn2:hover{
-        background: lightgray;
-      }
-    </style>
   </head>
   <body>
     
     <section class="Form my-4 mx-5">
-      <div class="col-lg-1">
-        <form>
-      <h1 class="col-md-11 text-center">Add icon</h1>
-      </form>
-    </div>
+      <div class="container">
+        <div class="row overlay">
+          <div class="col-xs-2"></div>
           <div>
-            <div class="container">
-              <div class="row">
-             <div class="col-xs-2"></div>
-             <div>
-             <h2 class="col-md-11 text-center">Add icon</h2>
-             </div> 
-             <form>
-              <div class="form-row">
-                <div class="col-lg-7">
-                  <input type="text" placeholder="Name" class="form-control my-3 p-4" id="name">
-                </div>
+            <h2 class="col-md-11 text-center">Add icon</h2>
+          </div> 
+          <form>
+            <div class="form-row">
+              <div class="col-lg-7">
+                <label for="name">Name</label>
+                <input type="text" placeholder="Name" class="text-input my-3 p-4" id="name">
               </div>
-              <div class="form-row">
-                <div class="col-lg-7">
-                  <input type="text" placeholder="Theme" class="form-control my-3 p-4" id="theme">
-                </div>
+            </div>
+            <div class="form-row">
+              <div class="col-lg-7">
+                <label for="theme">Theme ID</label>
+                <input type="text" placeholder="Theme" class="text-input my-3 p-4" id="theme">
               </div>
-              <div class="form-row">
-                <div class="col-lg-7">
-                  <input type="text" placeholder="Style" class="form-control my-3 p-4" id="style">
-                </div>
+            </div>
+            <div class="form-row">
+              <div class="col-lg-7">
+                <label for="style">Style</label>
+                <input type="text" placeholder="Style (e.g. Outline or Filled)" class="text-input my-3 p-4" id="style">
               </div>
-              <div class="form-row">
-                <div class="col-lg-7">
-                  <textarea class="form-control" rows="10" id="svgcode" placeholder="SVG Code"></textarea>
-                </div>
+            </div>
+            <div class="form-row">
+              <div class="col-lg-7">
+                <label for="svgcode">SVG Code</label>
+                <textarea class="text-input" rows="10" id="svgcode" placeholder="<svg class='icon'></svg>"></textarea>
               </div>
-              <div class="form-row">
-                  <div class="col-md-11 text-center">
-                    <a class="btn btn-primary col-xs-5 pull-right mar" href="home.html">Cancel</a>
-                    <a class="btn btn-primary col-xs-5 pull-right mar" id="btnaddicon">Add</a>
-                  </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-11 text-center">
+                <a class="btn button col-xs-5 pull-right mar" href="home.html">Cancel</a>
+                <a class="btn button button-accent col-xs-5 pull-right mar" id="btnaddicon">Add</a>
               </div>
-             </form>
-           </div>
-           </div>
-            <form>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
       </div>
     </section>

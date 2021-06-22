@@ -41,7 +41,7 @@ public class UserService {
 
         if (user == null){
             throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND, "Password or Username incorrect", new Exception("Password or Username incorrect"));
+                    HttpStatus.UNAUTHORIZED, "Password or Username incorrect");
         }
 
         return Optional.of(user.getUserGroup());
@@ -50,14 +50,24 @@ public class UserService {
     @Transactional
     public UserGroup upgradeToVip() {
         final SecurityContext context = SecurityContextHolder.getContext();
-        User oldUser = userRepository.getByName(context.getAuthentication().getName());
-        userRepository.changeUserGroup(oldUser.getName(), UserGroup.VIP);
+        User user = userRepository.getByName(context.getAuthentication().getName());
 
-        return userRepository.getByName(oldUser.getName()).getUserGroup();
+        if (user.getUserGroup() == UserGroup.NORMAL) {
+            userRepository.changeUserGroup(user.getName(), UserGroup.VIP);
+        } else {
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT, "Can only upgrade to VIP when user is NORMAL");
+        }
+
+        return userRepository.getByName(user.getName()).getUserGroup();
     }
 
     @Transactional
     public User register(final User user) {
+        if(userRepository.existsById(user.getName())){
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT, "Username already exists");
+        }
         user.setUserGroup(UserGroup.NORMAL);
         return userRepository.save(user);
     }

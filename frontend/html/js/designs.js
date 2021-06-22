@@ -24,9 +24,9 @@ getDesigns().then(designs => {
             <div class="iconsInDesign svgsFor${design.id}">
                 ${iconStr}
             </div>
-            <h5 class="card-title" style="color: ${design.iconColor};">${design.name}</h5>
-            <h6 class="card-subtitle mb-2 text-muted" style="color: ${design.iconColor};">made by</h6>
-            <h5 class="card-title" style="color: ${design.iconColor};">${design.userName}</h5>
+            <p class="card-title tm" style="color: ${design.iconColor};">${design.name}</p>
+            <p class="card-subtitle ts mb-2 text-muted" style="color: ${design.iconColor};">made by</p>
+            <p class="card-title tm" style="color: ${design.iconColor};">${design.userName}</p>
         </div></a>`
 
         CCSStylesheetRuleStyle('styles', `.svgsFor${design.id} .icon g`, 'fill', design.iconColor)
