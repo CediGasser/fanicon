@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.cedricgasser.fanicon.FaniconApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-27T22:07:48" hostname="C640YOGA" time="0.067">
+<testsuite name="com.cedricgasser.fanicon.FaniconApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-03T16:57:14" hostname="C640YOGA" time="0.092">
   <properties/>
-  <testcase name="testNothing()" classname="com.cedricgasser.fanicon.FaniconApplicationTests" time="0.067"/>
+  <testcase name="testNothing()" classname="com.cedricgasser.fanicon.FaniconApplicationTests" time="0.092"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

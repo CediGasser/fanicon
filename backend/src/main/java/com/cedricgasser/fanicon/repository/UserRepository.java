@@ -2,10 +2,10 @@ package com.cedricgasser.fanicon.repository;
 
 import com.cedricgasser.fanicon.model.User;
 import com.cedricgasser.fanicon.model.UserGroup;
-import io.lettuce.core.dynamic.annotation.Param;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
 import javax.transaction.Transactional;
 
