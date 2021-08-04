@@ -46,7 +46,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           dockerfile: ./backend/Dockerfile
-          repository: cedric-gasser/fanicon/fanicon-backend
+          repository: cedigasser/fanicon/fanicon-backend
           path: ./backend
           tags: latest
 
@@ -67,6 +67,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           dockerfile: ./frontend/Dockerfile
-          repository: cedric-gasser/fanicon/fanicon-frontend
+          repository: cedigasser/fanicon/fanicon-frontend
           path: ./frontend
           tags: latest
