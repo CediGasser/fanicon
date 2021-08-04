@@ -15,7 +15,10 @@ services:
 
   frontend:
     # container_name: fanicon-frontend
-    build: ./frontend/
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+      target: image-dev
     # ports:
     #   - 80:80
     #   - 443:443
